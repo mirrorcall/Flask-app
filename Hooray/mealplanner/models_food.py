@@ -24,48 +24,48 @@ class TableName(BaseModel, db.Model):
 '''
 
 
-class Recipes(BaseModel, db.Model):
+class IngredientCategory(BaseModel, db.Model):
 
-    __relation__ = 'recipes'
+    __tablename__ = 'ingredient_category'
+
+    icid = db.Column(db.INTEGER, primary_key=True, autoincrement=True)
+    ic_name = db.Column(db.VARCHAR, unique=True)
+
+
+class Ingredient(BaseModel, db.Model):
+
+    __tablename__ = 'ingredient'
+
+    iid = db.Column(db.INTEGER, primary_key=True, autoincrement=True)
+    i_name = db.Column(db.VARCHAR, unique=True)
+    i_description = db.Column(db.VARCHAR)
+    ic_id = db.Column(db.INTEGER, ForeignKey('ingredient_category.icid'))
+
+
+class RecipeCategory(BaseModel, db.Model):
+
+    __tablename__ = 'recipe_category'
+
+    rcid = db.Column(db.INTEGER, primary_key=True, autoincrement=True)
+    rc_name = db.Column(db.VARCHAR, unique=True)
+
+
+class Step(BaseModel, db.Model):
+
+    __tablename__ = 'step'
+
+    sid = db.Column(db.INTEGER, primary_key=True, autoincrement=True)
+    s_name = db.Column(db.VARCHAR, unique=True)
+    s_detail = db.Column(db.VARCHAR)
+
+
+class Recipe(BaseModel, db.Model):
+
+    __tablename__ = 'recipe'
 
     rid = db.Column(db.INTEGER, primary_key=True, autoincrement=True)
     r_name = db.Column(db.VARCHAR)
     r_description = db.Column(db.VARCHAR)
-
-    def __repr__(self):
-        return '<Recipe [%r] %r >' % (self.id, self.name)
-
-
-class Ingredients(BaseModel, db.Model):
-
-    __relation__ = 'ingredients'
-
-    iid = db.Column(db.INTEGER, primary_key=True, autoincrement=True)
-    i_name = db.Column(db.VARCHAR)
-    i_description = db.Column(db.VARCHAR)
-    r_id = db.Column(db.INTEGER, ForeignKey('recipes.rid'))
-
-    def __repr__(self):
-        return '<Ingredient [%r] %r>' % (self.iid, self.i_name)
-
-
-class Steps(BaseModel, db.Model):
-
-    __relation__ = 'steps'
-
-    sid = db.Column(db.INTEGER, primary_key=True, autoincrement=True)
-    s_name = db.Column(db.VARCHAR)
-    s_detail = db.Column(db.VARCHAR)
-    r_id = db.Column(db.INTEGER, ForeignKey('recipes.rid'))
-
-    def __repr__(self):
-        return '<Step [%r] %r>' % (self.sid, self.s_detail)
-
-
-class IngredientCategory(BaseModel, db.Model):
-
-    __relation__ = 'ingredients_categories'
-
-    cid = db.Column(db.INTEGER, primary_key=True, autoincrement=True)
-    c_name = db.Column(db.VARCHAR)
-    i_id = db.Column(db.INTEGER, ForeignKey('ingredients.iid'))
+    i_id = db.Column(db.INTEGER, ForeignKey('ingredient.iid'))
+    rc_id = db.Column(db.INTEGER, ForeignKey('recipe_category.rcid'))
+    s_id = db.Column(db.INTEGER, ForeignKey('step.sid'))

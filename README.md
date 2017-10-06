@@ -14,6 +14,7 @@ Simple flask web deployment with connecting to postgresql
 * flask_migrate
 * flask_script
 * psycopg2
+* pandas
 
 download python package with command `sudo pip3 install <package-name>`
 

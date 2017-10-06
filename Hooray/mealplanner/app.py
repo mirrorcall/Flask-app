@@ -95,11 +95,11 @@ def main():
 # result page
 @app.route('/result/<query>', methods=['GET', 'POST'])
 def result(query):
-    q = text("Select * from recipe where id in (Select recipeid from ingredients where ingredient like :i)")
+    q = text("Select * from recipes where rid = '1'")
     result = con.execute(q, i=query).fetchall()
     print(result)
     resultset = [dict(row) for row in result]
-    df = pd.DataFrame(data=result, columns=['id', 'name', 'description', 'steps'])
+    df = pd.DataFrame(data=result, columns=['rid', 'r_name', 'r_description'])
     print(df)
     print(resultset)
     form = SearchForm()

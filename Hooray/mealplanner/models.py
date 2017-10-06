@@ -44,3 +44,19 @@ class Ingredients(BaseModel, db.Model):
     i_name = db.Column(db.VARCHAR)
     i_description = db.Column(db.VARCHAR)
     r_id = db.Column(db.INTEGER, ForeignKey('recipes.rid'))
+
+    def __repr__(self):
+        return '<Ingredient [%r] %r>' % (self.iid, self.i_name)
+
+
+class Steps(BaseModel, db.Model):
+
+    __relation__ = 'steps'
+
+    sid = db.Column(db.INTEGER, primary_key=True, autoincrement=True)
+    s_name = db.Column(db.VARCHAR)
+    s_detail = db.Column(db.VARCHAR)
+    r_id = db.Column(db.INTEGER, ForeignKey('recipes.rid'))
+
+    def __repr__(self):
+        return '<Step [%r] %r>' % (self.sid, self.s_detail)

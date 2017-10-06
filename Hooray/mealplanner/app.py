@@ -1,5 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
-# from mealplanner import models generate circular import - import error
+# from mealplanner import models  generate circular import - import error
 from flask import Flask, redirect, render_template, json, request, jsonify, url_for
 from mealplanner.forms import SearchForm
 import sqlalchemy

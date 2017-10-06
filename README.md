@@ -8,13 +8,14 @@ Simple flask web deployment with connecting to postgresql
 
 ### Env require:
 
-* sqlalchemy
 * flask
-* flask_sqlalchemy
 * flask_migrate
 * flask_script
+* flask_sqlalchemy
+* flask_wtf
 * psycopg2
 * pandas
+* sqlalchemy
 
 download python package with command `sudo pip3 install <package-name>`
 

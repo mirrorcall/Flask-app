@@ -1,4 +1,4 @@
-from mealplanner.__init__ import db
+from mealplanner.app import db
 from sqlalchemy import ForeignKey
 
 

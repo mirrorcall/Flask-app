@@ -1,4 +1,4 @@
-from mealplanner.__init__ import app
+from mealplanner.app import app
 
 
 @app.route('/')

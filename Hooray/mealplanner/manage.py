@@ -1,7 +1,7 @@
 from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
-from mealplanner.__init__ import app
-from mealplanner.__init__ import db
+from mealplanner.app import app
+from mealplanner.app import db
 
 migrate = Migrate(app, db)
 manager = Manager(app)

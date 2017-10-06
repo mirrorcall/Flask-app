@@ -1,0 +1,15 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>Results</h1>  
+
+<div class="container">
+    <p>
+        <table class="table">
+            {{ data | safe }}
+        </table>
+    </p>
+</div>
+{% endblock %}

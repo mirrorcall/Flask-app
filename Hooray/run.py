@@ -1,5 +1,5 @@
-from mealplanner import __init__
+from mealplanner.app import app
 
 if __name__ == '__main__':
-    __init__.debug = True
-    __init__.run()
+    app.debug = True
+    app.run()

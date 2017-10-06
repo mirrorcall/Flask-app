@@ -17,7 +17,7 @@ Simple flask web deployment with connecting to postgresql
 * pandas
 * sqlalchemy
 
-download python package with command `sudo pip3 install <package-name>`
+download python3 package with command `sudo pip3 install <package-name>`
 
 ------
 
@@ -35,7 +35,7 @@ Table 1):
 
 To create the database:
 
-running `python3 createdb`
+running `python3 createdb.py`
 
 
 **Migration**

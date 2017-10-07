@@ -5,9 +5,17 @@
 import json
 import pprint
 
+
 with open('JSON/Arborio Rice.json') as f:
     data = json.load(f)
 
+    array = '{'
+
     for x in range(0, len(data['categories'])):
-        sql = "INSERT INTO ingredient_category (c_name) VALUES (\'%s\')" % (data['categories'][x])
-        print(sql)
+
+        if x == len(data['categories'])-1:
+            array += str(data["categories"][x]) + '}'
+        else:
+            array += str(data["categories"][x]) + ', '
+
+    print(array)

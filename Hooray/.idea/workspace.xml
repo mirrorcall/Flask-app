@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1a6145f-e145-4546-98fb-1a3c78359332" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/1f89ddea-29e5-43a3-9662-0e5d3421fd4e/_metadata_/metadata" afterPath="$PROJECT_DIR$/.idea/dataSources/1f89ddea-29e5-43a3-9662-0e5d3421fd4e/_metadata_/metadata" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/1f89ddea-29e5-43a3-9662-0e5d3421fd4e/_metadata_/metadata.keystream" afterPath="$PROJECT_DIR$/.idea/dataSources/1f89ddea-29e5-43a3-9662-0e5d3421fd4e/_metadata_/metadata.keystream" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/1f89ddea-29e5-43a3-9662-0e5d3421fd4e/_metadata_/metadata.keystream.len" afterPath="$PROJECT_DIR$/.idea/dataSources/1f89ddea-29e5-43a3-9662-0e5d3421fd4e/_metadata_/metadata.keystream.len" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/1f89ddea-29e5-43a3-9662-0e5d3421fd4e/_metadata_/metadata.len" afterPath="$PROJECT_DIR$/.idea/dataSources/1f89ddea-29e5-43a3-9662-0e5d3421fd4e/_metadata_/metadata.len" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/1f89ddea-29e5-43a3-9662-0e5d3421fd4e/_metadata_/metadata_i" afterPath="$PROJECT_DIR$/.idea/dataSources/1f89ddea-29e5-43a3-9662-0e5d3421fd4e/_metadata_/metadata_i" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/1f89ddea-29e5-43a3-9662-0e5d3421fd4e/_metadata_/metadata_i.len" afterPath="$PROJECT_DIR$/.idea/dataSources/1f89ddea-29e5-43a3-9662-0e5d3421fd4e/_metadata_/metadata_i.len" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readcate.py" afterPath="$PROJECT_DIR$/readcate.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readgred.py" afterPath="$PROJECT_DIR$/readgred.py" />
-    </list>
+    <list default="true" id="b1a6145f-e145-4546-98fb-1a3c78359332" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

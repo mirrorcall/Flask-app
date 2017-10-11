@@ -18,7 +18,7 @@ def correct_data(data):
 
 
 def drop_table():
-    sql = "DROP TABLE IF EXISTS ingredient_category CASCADE;DROP TABLE IF EXISTS ingredient CASCADE;"
+    sql = 'DROP TABLE IF EXISTS ingredient_category CASCADE;DROP TABLE IF EXISTS ingredient CASCADE;'
     cur.execute(sql)
 
 
@@ -34,8 +34,8 @@ def create_table():
           'CREATE TABLE ingredient (' \
           'iid SERIAL4,' \
           'i_name VARCHAR UNIQUE NOT NULL,' \
-          'i_description VARCHAR,' \
-          'ic_id INTEGER[],' \
+          'ic_ids INTEGER[],' \
+          'alt_names TEXT[],' \
           'PRIMARY KEY (iid)' \
           ');'
     cur.execute(sql)
@@ -59,11 +59,12 @@ def insert_into_ingre(item):
     global conn
     global cur
 
-    sql = "INSERT INTO ingredient (i_name, ic_id)" \
-          "SELECT \'%s\', \'%s\'" \
+    sql = "INSERT INTO ingredient (i_name, ic_ids, alt_names)" \
+          "SELECT \'%s\', \'%s\', \'%s\'" \
           "WHERE NOT EXISTS (SELECT iid FROM ingredient WHERE i_name = \'%s\')" \
-          "RETURNING iid" % (correct_data(item["name"]), build_array(select_ingre_cate(item)), correct_data(item["name"]))
+          "RETURNING iid" % (correct_data(item["name"]), build_array(select_ingre_cate(item)), build_array(item["altnames"]), correct_data(item["name"]))
     cur.execute(sql)
+    print(sql)
 
 
 # param: primitive json file data
@@ -93,9 +94,9 @@ def build_array(array):
     for x in array:
 
         if i == len(array):
-            var += str(x) + '}'
+            var += correct_data(x) + '}'
         else:
-            var += str(x) + ', '
+            var += correct_data(x) + ', '
         i += 1
 
     #print(var)
@@ -116,12 +117,12 @@ def main():
     create_table()
 
     # walking through all files in JSON directories
-    for dirpath, dirnames, files in os.walk('./JSON'):
+    for dirpath, dirnames, files in os.walk('./ingredients_JSON'):
         for f in files:
             if f == '.DS_Store':
                 pass
             else:
-                with open('JSON/'+f) as data_file:
+                with open('ingredients_JSON/'+f) as data_file:
                     data = json.load(data_file)
                     insert_into_cate(data)
                     insert_into_ingre(data)

@@ -38,8 +38,8 @@ class Ingredient(BaseModel, db.Model):
 
     iid = db.Column(db.INTEGER, primary_key=True, autoincrement=True)
     i_name = db.Column(db.VARCHAR, unique=True)
-    i_description = db.Column(db.VARCHAR)
-    ic_id = db.Column(db.INTEGER, ForeignKey('ingredient_category.icid'))
+    ic_ids = db.Column(db.ARRAY(db.INTEGER))
+    alt_names = db.Column(db.ARRAY(db.TEXT))
 
 
 class RecipeCategory(BaseModel, db.Model):

@@ -1,5 +1,7 @@
+import re
+
 from flask_sqlalchemy import SQLAlchemy
-# from mealplanner import models  generate circular import - import error
+#from mealplanner import models_food
 from flask import Flask, redirect, render_template, json, request, jsonify, url_for
 from mealplanner.forms import SearchForm
 import sqlalchemy
@@ -15,21 +17,12 @@ app.config.from_object('config')
 db = SQLAlchemy(app)
 db.init_app(app)
 
-
-def connect():
-    '''Returns a connection and a metadata object'''
-    # The return value of create_engine() is our connection object
-    con = sqlalchemy.create_engine(app.config['SQLALCHEMY_DATABASE_URI'], client_encoding='utf8')
-
-    # We then bind the connection to MetaData()
-    meta = sqlalchemy.MetaData(bind=con, reflect=True)
-
-    return con, meta
+# The return value of create_engine() is our connection object
+engine = sqlalchemy.create_engine(app.config['SQLALCHEMY_DATABASE_URI'], client_encoding='utf8')
 
 
-con, meta = connect()
-con
-meta
+
+
 
 '''
 if not con.dialect.has_table(con, 'recipe'):  # If table don't exist, Create.
@@ -96,7 +89,7 @@ def main():
 @app.route('/result/<query>', methods=['GET', 'POST'])
 def result(query):
     q = text("Select * from recipes where rid = '1'")
-    result = con.execute(q, i=query).fetchall()
+    result = engine.execute(q, i=query).fetchall()
     print(result)
     resultset = [dict(row) for row in result]
     df = pd.DataFrame(data=result, columns=['rid', 'r_name', 'r_description'])
@@ -107,8 +100,30 @@ def result(query):
                            title='Results',
                            form=form, data=df.to_html())
 
-'''
-if __name__ == '__main__':
-    #app.run(host='0.0.0.0', debug=True)
-    app.run(debug=True)
-'''
+
+"""
+    :param query    str type that can be any case and return the top 5 result in json format
+"""
+@app.route('/autocomplete/<query>', methods=['GET'])
+def autocomplete(query):
+    # remove all the non-alphabet chars
+    query = str.lower(str(query))
+    re.sub(r'[^a-zA-Z]', '', query)
+    unique_list = []
+    result = []
+    conn = engine.connect()
+    sql = 'SELECT i.* FROM ingredient i, UNNEST(alt_names) names WHERE (lower(i_name) LIKE \'%s%s%s\') OR ' \
+          '(lower(names) LIKE \'%s%s%s\') ORDER BY iid ASC LIMIT 100' % ('%', query, '%', '%', query, '%')
+    rs = conn.execute(sqlalchemy.text(sql))
+    for row in rs:
+        if row['i_name'] not in unique_list:
+            unique_list.append(row['i_name'])
+            result.append(row)
+            print(row)
+        if len(unique_list) == 5:
+            break
+
+    rs.close()
+
+    df = pd.DataFrame(data=result, columns=['ingredient_id', 'ingredient_name', 'ingredient_category', 'alt-name'])
+    print(df)

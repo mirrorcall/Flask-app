@@ -8,6 +8,7 @@ import sqlalchemy
 from sqlalchemy.sql import text
 from sqlalchemy import Table, Column, Integer, String, ForeignKey
 import pandas as pd
+import sys
 
 
 app = Flask(__name__)
@@ -62,6 +63,7 @@ toInsert = [
 @app.route('/', methods=['GET', 'POST'])
 def main():
     if request.method == 'POST':
+        print('if', file=sys.stderr)
         try:
             form = SearchForm()
             _query = request.form['query']
@@ -74,6 +76,7 @@ def main():
 
 
     else:
+        print('else', file=sys.stderr)
         form = SearchForm()
         # if form.validate_on_submit():
         #    flash('Search requested for query="%s"' %
@@ -127,3 +130,16 @@ def autocomplete(query):
 
     df = pd.DataFrame(data=result, columns=['ingredient_id', 'ingredient_name', 'ingredient_category', 'alt-name'])
     print(df)
+
+@app.route('/signIn', methods = ['GET','POST'])
+def signIn():
+    if request.method == 'POST':
+        #SignIn
+        print(request.form, file=sys.stderr)
+        return redirect(url_for('main'))
+                
+    else:
+        #Show the Login page
+        print('hi', file=sys.stderr)
+        return render_template('signup.html', title= 'Sign Up')
+    return render_template('index.html')

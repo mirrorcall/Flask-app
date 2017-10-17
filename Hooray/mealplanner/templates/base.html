@@ -18,7 +18,9 @@
   <body>
       <div class="row">
           <div class="col-sm-2"></div>
-          <div class="col-sm-10">RecipeFind: <a href="/">Home</a><a href="/signIn">Sign Up</a></div>
+          <div class="col-sm-10">RecipeFind: <a href="/">Home</a><a href="/signUp">Sign Up</a><a href="/signIn">Sign In</a>
+{% if 'userEmail' in session%}<h1>Logged in as {{session['userEmail']}}</h1>{%else%}<h1>Not Logged In</h1>{%endif%}
+</div>
           <hr>
       </div>
       <div class="row">

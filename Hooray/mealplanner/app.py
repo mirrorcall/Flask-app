@@ -2,7 +2,7 @@ import re
 
 from flask_sqlalchemy import SQLAlchemy
 #from mealplanner import models_food
-from flask import Flask, redirect, render_template, json, request, jsonify, url_for
+from flask import Flask, redirect, render_template, json, request, jsonify, url_for, session
 from mealplanner.forms import SearchForm
 import sqlalchemy
 from sqlalchemy.sql import text
@@ -20,9 +20,6 @@ db.init_app(app)
 
 # The return value of create_engine() is our connection object
 engine = sqlalchemy.create_engine(app.config['SQLALCHEMY_DATABASE_URI'], client_encoding='utf8')
-
-
-
 
 
 '''
@@ -131,15 +128,32 @@ def autocomplete(query):
     df = pd.DataFrame(data=result, columns=['ingredient_id', 'ingredient_name', 'ingredient_category', 'alt-name'])
     print(df)
 
+@app.route('/signUpUser', methods = ['GET','POST'])
+def signUpUser():
+    conn = engine.connect()
+    sql = "SELECT * FROM users WHERE users.u_email='%s'" % (request.form['inputEmail'])
+    result = conn.execute(sql).fetchall()
+    if len(result) < 1:
+        sql = "INSERT INTO users (u_name,u_email,u_password) VALUES ('%s','%s','%s');" % (request.form['inputName'],request.form['inputEmail'],request.form['inputPassword'])
+        conn.execute(sql)
+    return redirect(url_for('main'))
+
+@app.route('/signUp', methods = ['GET','POST'])
+def signUp():      
+    return render_template('signup.html', title= 'Sign Up')
+
+@app.route('/signInUser', methods = ['GET','POST'])
+def signInUser():
+    conn = engine.connect()
+    sql = "SELECT * FROM users WHERE users.u_email='%s' AND users.u_password='%s';" % (request.form['inputEmail'],request.form['inputPassword'])
+    result = conn.execute(sql).fetchall()
+    if len(result) == 1 and not 'userEmail' in session:
+        session['userEmail'] = request.form['inputEmail']
+
+    return redirect(url_for('main'))
+
 @app.route('/signIn', methods = ['GET','POST'])
-def signIn():
-    if request.method == 'POST':
-        #SignIn
-        print(request.form, file=sys.stderr)
-        return redirect(url_for('main'))
-                
-    else:
-        #Show the Login page
-        print('hi', file=sys.stderr)
-        return render_template('signup.html', title= 'Sign Up')
-    return render_template('index.html')
+def signIn():      
+    return render_template('signin.html', title= 'Sign In')
+
+app.secret_key = 'hooray'

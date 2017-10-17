@@ -156,4 +156,10 @@ def signInUser():
 def signIn():      
     return render_template('signin.html', title= 'Sign In')
 
+@app.route('/signOut', methods = ['GET','POST'])
+def signOut():
+    if 'userEmail' in session:
+        session.pop('userEmail')
+    return redirect(url_for('main'))
+
 app.secret_key = 'hooray'

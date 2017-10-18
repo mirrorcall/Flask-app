@@ -139,7 +139,7 @@ def autocomplete():
     search = request.args.get('q')
     conn = engine.connect()
     #cursor = conn.cursor()
-    sql="select i_name from ingredient where i_name like '%"+search+"%'"
+    sql="select i_name from ingredient where i_name like '%"+search+"%' limit 10"
     rs=conn.execute(sqlalchemy.text(sql))
     symbols = rs.fetchall()
     results = [mv[0] for mv in symbols]

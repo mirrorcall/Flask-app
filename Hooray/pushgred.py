@@ -64,7 +64,7 @@ def insert_into_ingre(item):
           "WHERE NOT EXISTS (SELECT iid FROM ingredient WHERE i_name = \'%s\')" \
           "RETURNING iid" % (correct_data(item["name"]), build_array(select_ingre_cate(item)), build_array(item["altnames"]), correct_data(item["name"]))
     cur.execute(sql)
-    print(sql)
+    #print(sql)
 
 
 # param: primitive json file data

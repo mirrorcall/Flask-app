@@ -26,7 +26,8 @@ python3 createdb.py
 **Populating JSON files**
 
 ```
-python3 pushgred.py
+python3 pushgred.py  # populate all ingredients
+python3 pushreci.py  # popluate all recipes
 ```
 
 **Migration**

@@ -32,11 +32,12 @@ def create_table():
         ');' \
         'CREATE TABLE recipe (' \
         '	rid SERIAL4 PRIMARY KEY,' \
-        '	r_name VARCHAR UNIQUE NOT NULL,' \
-        '	r_description VARCHAR,' \
+        '	r_name VARCHAR NOT NULL,' \
+        '	r_description VARCHAR DEFAULT \'none\',' \
         '   r_img VARCHAR DEFAULT \'none\',' \
-        '	i_id INTEGER[],' \
-        '	rc_id INTEGER[]' \
+        '   r_url VARCHAR NOT NULL,' \
+        '	i_ids INTEGER[],' \
+        '	rc_ids INTEGER[]' \
         ');'
     cur.execute(sql)
 
@@ -47,6 +48,57 @@ def drop_table():
 
     sql = 'DROP TABLE IF EXISTS recipe_category CASCADE;DROP TABLE IF EXISTS recipe CASCADE;'
     cur.execute(sql)
+
+
+def query_ingre_id(ingre):
+    global conn
+    global cur
+
+    sql = 'SELECT * FROM ingredient WHERE i_name = \'%s\'' % correct_data(ingre)
+    cur.execute(sql)
+    rs = cur.fetchone()
+    return int(rs[0])
+
+
+def list_to_array(alist):
+    var = '{'
+    i = 1
+
+    if len(alist) == 0:
+        return '{}'
+
+    for x in alist:
+        if i == len(alist):
+            var += str(x) + '}'
+        else:
+            var += str(x) + ','
+        i += 1
+
+    return var
+
+
+def check_ingre_id(item):
+    idlist = []
+    for i in item:
+        idlist.append(query_ingre_id(i))
+
+    array = list_to_array(idlist)
+
+    return array
+
+
+def insert_into_reci(item):
+
+    for x in range(len(item)):
+        sql = 'INSERT INTO recipe (r_name, r_description, r_img, r_url, i_ids)' \
+              'VALUES (\'%s\', \'%s\', \'%s\', \'%s\', \'%s\')' % (correct_data(item[x]['title']),
+                                                           correct_data(item[x]['description']),
+                                                           correct_data(item[x]['img']),
+                                                           correct_data(item[x]['url']),
+                                                           check_ingre_id(item[x]['ingredients-matched']))
+        cur.execute(sql)
+        #print(x)
+
 
 
 def main():
@@ -63,9 +115,9 @@ def main():
             else:
                 with open('recipes_JSON/'+f) as data_file:
                     data = json.load(data_file)
-                    print(correct_data(data['ingredients']))
-
-                    break
+                    #print(len(data['recipes']))
+                    #print(correct_data(data['recipes'][0]))
+                    insert_into_reci(data['recipes'])
 
     conn.commit()
     cur.close()

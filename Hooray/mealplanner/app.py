@@ -88,11 +88,11 @@ def main():
 # result page
 @app.route('/result/<query>', methods=['GET', 'POST'])
 def result(query):
-    q = text("Select * from recipes where rid = '1'")
+    q = text("Select * from ingredient where i_name like :i")
     result = engine.execute(q, i=query).fetchall()
     print(result)
     resultset = [dict(row) for row in result]
-    df = pd.DataFrame(data=result, columns=['rid', 'r_name', 'r_description'])
+    df = pd.DataFrame(data=result, columns=['iid', 'i_name', 'i_description', 'ic_id'])
     print(df)
     print(resultset)
     form = SearchForm()
@@ -104,29 +104,52 @@ def result(query):
 """
     :param query    str type that can be any case and return the top 5 result in json format
 """
-@app.route('/autocomplete/<query>', methods=['GET'])
-def autocomplete(query):
-    # remove all the non-alphabet chars
-    query = str.lower(str(query))
-    re.sub(r'[^a-zA-Z]', '', query)
-    unique_list = []
-    result = []
+
+
+#@app.route('/autocomplete/<query>', methods=['GET'])
+#def autocomplete(query):
+#    # remove all the non-alphabet chars
+#    query = str.lower(str(query))
+#    re.sub(r'[^a-zA-Z]', '', query)
+#    unique_list = []
+#    result = []
+#    conn = engine.connect()
+#    sql = 'SELECT i.* FROM ingredient i, UNNEST(alt_names) names WHERE (lower(i_name) LIKE \'%s%s%s\') OR ' \
+#          '(lower(names) LIKE \'%s%s%s\') ORDER BY iid ASC LIMIT 100' % ('%', query, '%', '%', query, '%')
+#    rs = conn.execute(sqlalchemy.text(sql))
+#    for row in rs:
+#        if row['i_name'] not in unique_list:
+#            unique_list.append(row['i_name'])
+#            result.append(row)
+#            print(row)
+#        if len(unique_list) == 5:
+#            break
+
+#    rs.close()
+
+#    df = pd.DataFrame(data=result, columns=['ingredient_id', 'ingredient_name', 'ingredient_category', 'alt-name'])
+#    print(df)
+
+
+
+
+@app.route('/autocomplete',methods=['GET'])
+def autocomplete():
+
+    search = request.args.get('q')
     conn = engine.connect()
-    sql = 'SELECT i.* FROM ingredient i, UNNEST(alt_names) names WHERE (lower(i_name) LIKE \'%s%s%s\') OR ' \
-          '(lower(names) LIKE \'%s%s%s\') ORDER BY iid ASC LIMIT 100' % ('%', query, '%', '%', query, '%')
-    rs = conn.execute(sqlalchemy.text(sql))
-    for row in rs:
-        if row['i_name'] not in unique_list:
-            unique_list.append(row['i_name'])
-            result.append(row)
-            print(row)
-        if len(unique_list) == 5:
-            break
+    #cursor = conn.cursor()
+    sql="select i_name from ingredient where i_name like '%"+search+"%'"
+    rs=conn.execute(sqlalchemy.text(sql))
+    symbols = rs.fetchall()
+    results = [mv[0] for mv in symbols]
+    print(results)
+    
+    #cursor.close()
+    conn.close()
 
-    rs.close()
 
-    df = pd.DataFrame(data=result, columns=['ingredient_id', 'ingredient_name', 'ingredient_category', 'alt-name'])
-    print(df)
+    return jsonify(matching_results=results)
 
 @app.route('/signUpUser', methods = ['GET','POST'])
 def signUpUser():

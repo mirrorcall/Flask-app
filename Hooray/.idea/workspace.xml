@@ -1,112 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1a6145f-e145-4546-98fb-1a3c78359332" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/1f89ddea-29e5-43a3-9662-0e5d3421fd4e.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/1f89ddea-29e5-43a3-9662-0e5d3421fd4e.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Aji Dulce Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Aji Dulce Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Amberjack.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Amberjack.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Anaheim Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Anaheim Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Ancho Chile.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Ancho Chile.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Bacon.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Bacon.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Banana Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Banana Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Beef Cheek.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Beef Cheek.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Beef Liver.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Beef Liver.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Beef Mince.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Beef Mince.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Beefsteak Tomato.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Beefsteak Tomato.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Black Currant.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Black Currant.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Bream.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Bream.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Brioche.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Brioche.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Bulgarian Carrot Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Bulgarian Carrot Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Caribe Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Caribe Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Cascabel Chile.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Cascabel Chile.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Cayenne Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Cayenne Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Cayenne Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Cayenne Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Charleston Hot Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Charleston Hot Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Cheddar Cheese.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Cheddar Cheese.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Chicken Wing.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Chicken Wing.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Chilaca Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Chilaca Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Chilcostle Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Chilcostle Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Chilhuacle Negro Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Chilhuacle Negro Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Chili Bean Paste.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Chili Bean Paste.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Chili Flakes.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Chili Flakes.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Chili Oil.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Chili Oil.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Chili Powder.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Chili Powder.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Chilli Sauce.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Chilli Sauce.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Chipotle Chile.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Chipotle Chile.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Cod.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Cod.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Corn Flour.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Corn Flour.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Corned Beef.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Corned Beef.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Corno Di Toro Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Corno Di Toro Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Cream Cheese.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Cream Cheese.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Cubanelle Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Cubanelle Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Dried De Árbol Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Dried De Árbol Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Dried Togarashi Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Dried Togarashi Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Dutch Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Dutch Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Fresno Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Fresno Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Gaujillo Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Gaujillo Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Ghost Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Ghost Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Gravlax.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Gravlax.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Ground Turkey.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Ground Turkey.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Guajillo Chile.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Guajillo Chile.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Habañero Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Habañero Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Hanger Steak.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Hanger Steak.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Harissa.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Harissa.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Hawaiian Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Hawaiian Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Hummus.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Hummus.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Hungarian Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Hungarian Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Hungarian Wax Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Hungarian Wax Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Jalapeño Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Jalapeño Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Jamaican Hot Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Jamaican Hot Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Ladyfinger.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Ladyfinger.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Lamb Leg.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Lamb Leg.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Lamb Mince.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Lamb Mince.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Lamb Rack.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Lamb Rack.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Lamb Shank.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Lamb Shank.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Manzano Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Manzano Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Mayonnaise.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Mayonnaise.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Mulato Chile.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Mulato Chile.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/New Mexico Green Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/New Mexico Green Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Numex Twilight Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Numex Twilight Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Pancetta.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Pancetta.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Pasilla Chile.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Pasilla Chile.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Pecan.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Pecan.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Peqúin Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Peqúin Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Piment d' Anglet Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Piment d' Anglet Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Piquillo Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Piquillo Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Pita Bread.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Pita Bread.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Poblano Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Poblano Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Pork Belly.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Pork Belly.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Pork Fat.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Pork Fat.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Pork Rillettes.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Pork Rillettes.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Pork Tenderloin.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Pork Tenderloin.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Red Cherry Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Red Cherry Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Red Currant Jelly.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Red Currant Jelly.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Red Currant.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Red Currant.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Rocotillo Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Rocotillo Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Rose Water.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Rose Water.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Round Of Hungary Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Round Of Hungary Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Salt Pork.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Salt Pork.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Santa Fe Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Santa Fe Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Santa Fe Grande Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Santa Fe Grande Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Scorpion Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Scorpion Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Scotch Bonnet Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Scotch Bonnet Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Serrano Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Serrano Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Sesame Chili Oil.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Sesame Chili Oil.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Shishito Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Shishito Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Sinise Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Sinise Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Skirt Steak.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Skirt Steak.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Szechwan Chile Sauce.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Szechwan Chile Sauce.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Tabasco Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Tabasco Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Thai Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Thai Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Togarashi Chile Pepper.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Togarashi Chile Pepper.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Wasabi Paste.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Wasabi Paste.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/Wheat Germ.json" afterPath="$PROJECT_DIR$/ingredients_JSON/Wheat Germ.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingredients_JSON/jambon Persillé.json" afterPath="$PROJECT_DIR$/ingredients_JSON/jambon Persillé.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pushgred.py" afterPath="$PROJECT_DIR$/pushgred.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pushreci.py" afterPath="$PROJECT_DIR$/pushreci.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../README.md" afterPath="$PROJECT_DIR$/../README.md" />
-    </list>
+    <list default="true" id="b1a6145f-e145-4546-98fb-1a3c78359332" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -207,17 +102,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mealplanner/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="125" column="12" lean-forward="false" selection-start-line="125" selection-start-column="12" selection-end-line="125" selection-end-column="12" />
+            <state relative-caret-position="353">
+              <caret line="150" column="0" lean-forward="false" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
               <folding>
-                <marker date="1508304302000" expanded="true" signature="2648:2685" ph="Select * fro... recipes" />
-                <marker date="1508304302000" expanded="true" signature="3451:3618" ph="SELECT i.* F... ingredient" />
-                <marker date="1508304302000" expanded="true" signature="4174:4218" ph="SELECT * FRO... users" />
-                <marker date="1508304302000" expanded="true" signature="4332:4401" ph="INSERT INTO users... " />
-                <marker date="1508304302000" expanded="true" signature="4793:4863" ph="SELECT * FRO... users" />
+                <marker date="1508321391000" expanded="true" signature="2648:2662" ph="Select * fro... recipes" />
+                <marker date="1508321391000" expanded="true" signature="2648:2693" ph="Select * fro... ingredient" />
+                <marker date="1508321391000" expanded="true" signature="4273:4344" ph="select i_nam... ingredient" />
+                <marker date="1508321391000" expanded="true" signature="4674:4718" ph="SELECT * FRO... users" />
+                <marker date="1508321391000" expanded="true" signature="4832:4901" ph="INSERT INTO users... " />
+                <marker date="1508321391000" expanded="true" signature="5293:5363" ph="SELECT * FRO... users" />
               </folding>
             </state>
           </provider>
@@ -286,7 +182,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pushreci.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pushreci.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pushreci.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
@@ -391,6 +287,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Hooray" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hooray" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hooray" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mealplanner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hooray" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hooray" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mealplanner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -776,14 +704,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mealplanner/model_user.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -822,11 +742,12 @@
         <state relative-caret-position="153">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <marker date="1508304302000" expanded="true" signature="2648:2685" ph="Select * fro... recipes" />
-            <marker date="1508304302000" expanded="true" signature="3451:3618" ph="SELECT i.* F... ingredient" />
-            <marker date="1508304302000" expanded="true" signature="4174:4218" ph="SELECT * FRO... users" />
-            <marker date="1508304302000" expanded="true" signature="4332:4401" ph="INSERT INTO users... " />
-            <marker date="1508304302000" expanded="true" signature="4793:4863" ph="SELECT * FRO... users" />
+            <marker date="1508321391000" expanded="true" signature="2648:2662" ph="Select * fro... recipes" />
+            <marker date="1508321391000" expanded="true" signature="2648:2693" ph="Select * fro... ingredient" />
+            <marker date="1508321391000" expanded="true" signature="4273:4344" ph="select i_nam... ingredient" />
+            <marker date="1508321391000" expanded="true" signature="4674:4718" ph="SELECT * FRO... users" />
+            <marker date="1508321391000" expanded="true" signature="4832:4901" ph="INSERT INTO users... " />
+            <marker date="1508321391000" expanded="true" signature="5293:5363" ph="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>
@@ -869,11 +790,12 @@
         <state relative-caret-position="153">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <marker date="1508304302000" expanded="true" signature="2648:2685" ph="Select * fro... recipes" />
-            <marker date="1508304302000" expanded="true" signature="3451:3618" ph="SELECT i.* F... ingredient" />
-            <marker date="1508304302000" expanded="true" signature="4174:4218" ph="SELECT * FRO... users" />
-            <marker date="1508304302000" expanded="true" signature="4332:4401" ph="INSERT INTO users... " />
-            <marker date="1508304302000" expanded="true" signature="4793:4863" ph="SELECT * FRO... users" />
+            <marker date="1508321391000" expanded="true" signature="2648:2662" ph="Select * fro... recipes" />
+            <marker date="1508321391000" expanded="true" signature="2648:2693" ph="Select * fro... ingredient" />
+            <marker date="1508321391000" expanded="true" signature="4273:4344" ph="select i_nam... ingredient" />
+            <marker date="1508321391000" expanded="true" signature="4674:4718" ph="SELECT * FRO... users" />
+            <marker date="1508321391000" expanded="true" signature="4832:4901" ph="INSERT INTO users... " />
+            <marker date="1508321391000" expanded="true" signature="5293:5363" ph="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>
@@ -970,11 +892,12 @@
         <state relative-caret-position="68">
           <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
-            <marker date="1508304302000" expanded="true" signature="2648:2685" ph="Select * fro... recipes" />
-            <marker date="1508304302000" expanded="true" signature="3451:3618" ph="SELECT i.* F... ingredient" />
-            <marker date="1508304302000" expanded="true" signature="4174:4218" ph="SELECT * FRO... users" />
-            <marker date="1508304302000" expanded="true" signature="4332:4401" ph="INSERT INTO users... " />
-            <marker date="1508304302000" expanded="true" signature="4793:4863" ph="SELECT * FRO... users" />
+            <marker date="1508321391000" expanded="true" signature="2648:2662" ph="Select * fro... recipes" />
+            <marker date="1508321391000" expanded="true" signature="2648:2693" ph="Select * fro... ingredient" />
+            <marker date="1508321391000" expanded="true" signature="4273:4344" ph="select i_nam... ingredient" />
+            <marker date="1508321391000" expanded="true" signature="4674:4718" ph="SELECT * FRO... users" />
+            <marker date="1508321391000" expanded="true" signature="4832:4901" ph="INSERT INTO users... " />
+            <marker date="1508321391000" expanded="true" signature="5293:5363" ph="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>
@@ -992,11 +915,12 @@
         <state relative-caret-position="68">
           <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
           <folding>
-            <marker date="1508304302000" expanded="true" signature="2648:2685" ph="Select * fro... recipes" />
-            <marker date="1508304302000" expanded="true" signature="3451:3618" ph="SELECT i.* F... ingredient" />
-            <marker date="1508304302000" expanded="true" signature="4174:4218" ph="SELECT * FRO... users" />
-            <marker date="1508304302000" expanded="true" signature="4332:4401" ph="INSERT INTO users... " />
-            <marker date="1508304302000" expanded="true" signature="4793:4863" ph="SELECT * FRO... users" />
+            <marker date="1508321391000" expanded="true" signature="2648:2662" ph="Select * fro... recipes" />
+            <marker date="1508321391000" expanded="true" signature="2648:2693" ph="Select * fro... ingredient" />
+            <marker date="1508321391000" expanded="true" signature="4273:4344" ph="select i_nam... ingredient" />
+            <marker date="1508321391000" expanded="true" signature="4674:4718" ph="SELECT * FRO... users" />
+            <marker date="1508321391000" expanded="true" signature="4832:4901" ph="INSERT INTO users... " />
+            <marker date="1508321391000" expanded="true" signature="5293:5363" ph="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>
@@ -1093,20 +1017,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mealplanner/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="125" column="12" lean-forward="false" selection-start-line="125" selection-start-column="12" selection-end-line="125" selection-end-column="12" />
-          <folding>
-            <marker date="1508304302000" expanded="true" signature="2648:2685" ph="Select * fro... recipes" />
-            <marker date="1508304302000" expanded="true" signature="3451:3618" ph="SELECT i.* F... ingredient" />
-            <marker date="1508304302000" expanded="true" signature="4174:4218" ph="SELECT * FRO... users" />
-            <marker date="1508304302000" expanded="true" signature="4332:4401" ph="INSERT INTO users... " />
-            <marker date="1508304302000" expanded="true" signature="4793:4863" ph="SELECT * FRO... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mealplanner/manage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
@@ -1167,6 +1077,29 @@
             <marker date="1508321071000" expanded="true" signature="1876:1939" ph="INSERT INTO recipe... " />
             <marker date="1508321071000" expanded="true" signature="1876:2000" ph="INSERT INTO recipe... " />
             <marker date="1508321071000" expanded="true" signature="1876:2005" ph="INSERT INTO recipe... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mealplanner/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-193">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mealplanner/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="150" column="0" lean-forward="false" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+          <folding>
+            <marker date="1508321391000" expanded="true" signature="2648:2662" ph="Select * fro... recipes" />
+            <marker date="1508321391000" expanded="true" signature="2648:2693" ph="Select * fro... ingredient" />
+            <marker date="1508321391000" expanded="true" signature="4273:4344" ph="select i_nam... ingredient" />
+            <marker date="1508321391000" expanded="true" signature="4674:4718" ph="SELECT * FRO... users" />
+            <marker date="1508321391000" expanded="true" signature="4832:4901" ph="INSERT INTO users... " />
+            <marker date="1508321391000" expanded="true" signature="5293:5363" ph="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>

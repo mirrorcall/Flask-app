@@ -34,9 +34,18 @@ def create_table():
         '	rid SERIAL4 PRIMARY KEY,' \
         '	r_name VARCHAR UNIQUE NOT NULL,' \
         '	r_description VARCHAR,' \
-        '	i_id INTEGER REFERENCES ingredient(iid),' \
-        '	rc_id INTEGER REFERENCES recipe_category(rcid)' \
+        '   r_img VARCHAR DEFAULT \'none\',' \
+        '	i_id INTEGER[],' \
+        '	rc_id INTEGER[]' \
         ');'
+    cur.execute(sql)
+
+
+def drop_table():
+    global conn
+    global cur
+
+    sql = 'DROP TABLE IF EXISTS recipe_category CASCADE;DROP TABLE IF EXISTS recipe CASCADE;'
     cur.execute(sql)
 
 
@@ -44,7 +53,8 @@ def main():
     global conn
     global cur
 
-    #create_table()
+    drop_table()
+    create_table()
 
     for dirpath, dirnames, files in os.walk('./recipes_JSON'):
         for f in files:
@@ -53,7 +63,7 @@ def main():
             else:
                 with open('recipes_JSON/'+f) as data_file:
                     data = json.load(data_file)
-                    print(correct_data(data['ingredients'][8]))
+                    print(correct_data(data['ingredients']))
 
                     break
 

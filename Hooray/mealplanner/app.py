@@ -58,19 +58,67 @@ toInsert = [
 
 # main page
 @app.route('/', methods=['GET', 'POST'])
-def main():
+@app.route('/<tags>', methods=['GET', 'POST'])
+def main(tags=None): 
+    #alltags2=[]
+    #newtags2=[]
+    tagarray=[]
+    gettags = tags
+    #print(tags)
+    #print('HUDWHIHD')
+    if tags != None:
+        #alltags2.extend([tags])
+        tagarray=gettags.split(",")
+        #gettagsfix = re.search("'.*'", gettags, flags =0).group()
+        #gettagsfix = re.sub("'", '', gettagsfix)
+        #stringtags = ''.join(alltags2)
+        tagarray= [re.search("'.*'", elem, flags=0).group() for elem in tagarray]
+        tagarray= [re.sub("'", '', elem) for elem in tagarray]
+        #newtags2.extend([gettagsfix])
+        #stringtags = re.sub(']', '', stringtags)
+        #stringtags = re.sub('[', '', stringtags)
+        
+        #stringt2 = re.sub("'", '', stringt.group())
+        #print('string')
+        
+        #print(tagarray)
+       # print('stringend')
     if request.method == 'POST':
         print('if', file=sys.stderr)
-        try:
-            form = SearchForm()
-            _query = request.form['query']
-            return redirect(url_for('result', query=_query))
-        except Exception as e:
-            form = SearchForm()
-            return render_template('index.html',
-                                   title='Home',
-                                   form=form)
+        _query = request.form['query']
+        #print('query')
+        #print(_query)
+        if request.form['submit'] == 'Search':
+            try:
+                form = SearchForm()
+                #_query = request.form['query']
+                return redirect(url_for('result', query=_query))
+            except Exception as e:
+                form = SearchForm()
+                return render_template('index.html',
+                                       title='Home',
+                                       form=form)
 
+        if request.form['submit'] == 'Add':
+            #print('1')
+            tagarray.append(_query)
+            #print(tagarray)
+            for tag in tagarray:
+                print(tag)
+            try:
+                form = SearchForm()
+                #_query = request.form['query']
+                #tags.append(_query)
+                return redirect(url_for('main', tags=tagarray))
+                #return render_template('index.html',
+                #                       title='Home',
+                #                       form=form, tags=_query)
+
+            except Exception as e:
+                form = SearchForm()
+                return render_template('index.html',
+                                       title='Home',
+                                       form=form)
 
     else:
         print('else', file=sys.stderr)
@@ -81,7 +129,7 @@ def main():
         #    return redirect(url_for('result', query=form.query.data), evidence=form.evidence.data)
         return render_template('index.html',
                                title='Search',
-                               form=form)
+                               form=form, tags=tagarray)
     return render_template('index.html')
 
 

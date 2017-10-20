@@ -155,29 +155,42 @@ def result(query):
 """
 
 
-#@app.route('/autocomplete/<query>', methods=['GET'])
-#def autocomplete(query):
-#    # remove all the non-alphabet chars
-#    query = str.lower(str(query))
-#    re.sub(r'[^a-zA-Z]', '', query)
-#    unique_list = []
-#    result = []
-#    conn = engine.connect()
-#    sql = 'SELECT i.* FROM ingredient i, UNNEST(alt_names) names WHERE (lower(i_name) LIKE \'%s%s%s\') OR ' \
-#          '(lower(names) LIKE \'%s%s%s\') ORDER BY iid ASC LIMIT 100' % ('%', query, '%', '%', query, '%')
-#    rs = conn.execute(sqlalchemy.text(sql))
-#    for row in rs:
-#        if row['i_name'] not in unique_list:
-#            unique_list.append(row['i_name'])
-#            result.append(row)
-#            print(row)
-#        if len(unique_list) == 5:
-#            break
+@app.route('/autocomplete',methods=['GET'])
+def autocomplete():
+    # remove all the non-alphabet chars
+    query = request.args.get('q')
+    query = str.lower(str(query))
+    re.sub(r'[^a-zA-Z]', '', query)
+    ingredients = dict()
+    unique_list = []
+    results = []
+    conn = engine.connect()
+    sql = 'SELECT i.* FROM ingredient i, UNNEST(alt_names) names WHERE (lower(i_name) LIKE \'%s%s%s\') OR ' \
+          '(lower(names) LIKE \'%s%s%s\') ORDER BY iid ASC LIMIT 100' % ('%', query, '%', '%', query, '%')
+    rs = conn.execute(sqlalchemy.text(sql))
+    for row in rs:
+        if row['i_name'] not in unique_list:
+            unique_list.append(row['i_name'])
+            results.append(row)
 
-#    rs.close()
+        if len(unique_list) == 5:
+            break
 
-#    df = pd.DataFrame(data=result, columns=['ingredient_id', 'ingredient_name', 'ingredient_category', 'alt-name'])
-#    print(df)
+    rs.close()
+
+    for res in results:
+        if query in str.lower(res['i_name']):
+            ingredients[res['iid']] = res['i_name']
+        else:
+            for x in res['alt_names']:
+                if query in str.lower(x):
+                    ingredients[res['iid']] = x
+
+    print(json.dumps(ingredients))
+
+    df = pd.DataFrame(data=results, columns=['ingredient_id', 'ingredient_name', 'ingredient_category', 'alt-name'])
+    #print(df)
+
 
 
 def init_array(query):
@@ -193,6 +206,7 @@ def init_array(query):
 
     return str(parray)
 
+
 """
     :param      query    of str type (recipe title) or int type (ingredient id)
     :return        
@@ -203,7 +217,6 @@ def search_recipe(query):
     re.sub(r'[^a-zA-Z]', '', query)
     conn = engine.connect()
     if re.search(r'\d', query):  # if query is digit check related ingredients id
-
         sql = "SELECT * FROM recipe WHERE %s <@ i_ids" % init_array(query)  # add LIMIT to restrict to specific # of output
     else:               # if query is alphabetic check recipes name
         sql = "SELECT * FROM recipe WHERE lower(r_name) LIKE \'%%%s%%\' ORDER BY rid" \
@@ -214,7 +227,7 @@ def search_recipe(query):
 
     print(sql)
 
-
+'''
 @app.route('/autocomplete',methods=['GET'])
 def autocomplete():
 
@@ -232,6 +245,7 @@ def autocomplete():
 
 
     return jsonify(matching_results=results)
+'''
 
 @app.route('/signUpUser', methods = ['GET','POST'])
 def signUpUser():

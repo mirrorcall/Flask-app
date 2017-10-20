@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1a6145f-e145-4546-98fb-1a3c78359332" name="Default" comment="" />
+    <list default="true" id="b1a6145f-e145-4546-98fb-1a3c78359332" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/1f89ddea-29e5-43a3-9662-0e5d3421fd4e.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/1f89ddea-29e5-43a3-9662-0e5d3421fd4e.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mealplanner/app.py" afterPath="$PROJECT_DIR$/mealplanner/app.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,7 +17,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Hooray$DBCreation.coverage" NAME="DBCreation Coverage Results" MODIFIED="1507347488946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Hooray$DBManager.coverage" NAME="DBManager Coverage Results" MODIFIED="1507215576052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mealplanner" />
-    <SUITE FILE_PATH="coverage/Hooray$Hooray.coverage" NAME="Hooray Coverage Results" MODIFIED="1508310454181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Hooray$Hooray.coverage" NAME="Hooray Coverage Results" MODIFIED="1508460808038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Hooray$MealPlanner.coverage" NAME="MealPlanner Coverage Results" MODIFIED="1507208368920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/Hooray$ReadRecipes.coverage" NAME="ReadRecipes Coverage Results" MODIFIED="1508321073235" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Hooray$ReadJson.coverage" NAME="ReadJson Coverage Results" MODIFIED="1508310672903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -85,7 +90,7 @@
       <file leaf-file-name="config.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="256">
               <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="23" />
               <folding />
             </state>
@@ -105,15 +110,19 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mealplanner/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="150" column="0" lean-forward="false" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+            <state relative-caret-position="234">
+              <caret line="206" column="44" lean-forward="false" selection-start-line="206" selection-start-column="44" selection-end-line="206" selection-end-column="44" />
               <folding>
-                <marker date="1508321391000" expanded="true" signature="2648:2662" ph="Select * fro... recipes" />
-                <marker date="1508321391000" expanded="true" signature="2648:2693" ph="Select * fro... ingredient" />
-                <marker date="1508321391000" expanded="true" signature="4273:4344" ph="select i_nam... ingredient" />
-                <marker date="1508321391000" expanded="true" signature="4674:4718" ph="SELECT * FRO... users" />
-                <marker date="1508321391000" expanded="true" signature="4832:4901" ph="INSERT INTO users... " />
-                <marker date="1508321391000" expanded="true" signature="5293:5363" ph="SELECT * FRO... users" />
+                <marker date="1508460918000" expanded="true" signature="4474:4488" ph="Select * fro... recipes" />
+                <marker date="1508460918000" expanded="true" signature="4474:4519" ph="Select * fro... ingredient" />
+                <marker date="1508460918000" expanded="true" signature="6584:6610" ph="SELECT * FRO... recipe" />
+                <marker date="1508460918000" expanded="true" signature="6584:6619" ph="SELECT * FRO... recipe" />
+                <marker date="1508460918000" expanded="true" signature="6584:6622" ph="SELECT * FRO... recipe" />
+                <marker date="1508460918000" expanded="true" signature="6776:6845" ph="SELECT * FRO... recipe" />
+                <marker date="1508460918000" expanded="true" signature="7195:7266" ph="select i_nam... ingredient" />
+                <marker date="1508460918000" expanded="true" signature="7596:7640" ph="SELECT * FRO... users" />
+                <marker date="1508460918000" expanded="true" signature="7754:7823" ph="INSERT INTO users... " />
+                <marker date="1508460918000" expanded="true" signature="8215:8285" ph="SELECT * FRO... users" />
               </folding>
             </state>
           </provider>
@@ -122,7 +131,7 @@
       <file leaf-file-name="models_food.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mealplanner/models_food.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
+            <state relative-caret-position="640">
               <caret line="41" column="44" lean-forward="false" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
@@ -134,7 +143,7 @@
       <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mealplanner/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="16">
               <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
@@ -146,7 +155,7 @@
       <file leaf-file-name="manage.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mealplanner/manage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
+            <state relative-caret-position="16">
               <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
@@ -158,7 +167,7 @@
       <file leaf-file-name="pushgred.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pushgred.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-204">
+            <state relative-caret-position="1024">
               <caret line="66" column="5" lean-forward="false" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
               <folding>
                 <element signature="e#96#105#0" expanded="true" />
@@ -185,8 +194,8 @@
       <file leaf-file-name="pushreci.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pushreci.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="120" column="0" lean-forward="true" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+            <state relative-caret-position="1856">
+              <caret line="120" column="0" lean-forward="false" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
               <folding>
                 <element signature="e#92#101#0" expanded="true" />
                 <marker date="1508321071000" expanded="true" signature="553:663" ph="CREATE TABLE... recipe_category" />
@@ -244,9 +253,9 @@
         <option value="$PROJECT_DIR$/readcate.py" />
         <option value="$PROJECT_DIR$/readgred.py" />
         <option value="$PROJECT_DIR$/mealplanner/models_food.py" />
-        <option value="$PROJECT_DIR$/mealplanner/app.py" />
         <option value="$PROJECT_DIR$/pushgred.py" />
         <option value="$PROJECT_DIR$/pushreci.py" />
+        <option value="$PROJECT_DIR$/mealplanner/app.py" />
       </list>
     </option>
   </component>
@@ -278,6 +287,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -324,7 +334,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -352,7 +361,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.ReadRecipes">
+  <component name="RunManager" selected="Python.Hooray">
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -633,18 +642,17 @@
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29402262" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28917608" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -652,6 +660,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -742,12 +751,16 @@
         <state relative-caret-position="153">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <marker date="1508321391000" expanded="true" signature="2648:2662" ph="Select * fro... recipes" />
-            <marker date="1508321391000" expanded="true" signature="2648:2693" ph="Select * fro... ingredient" />
-            <marker date="1508321391000" expanded="true" signature="4273:4344" ph="select i_nam... ingredient" />
-            <marker date="1508321391000" expanded="true" signature="4674:4718" ph="SELECT * FRO... users" />
-            <marker date="1508321391000" expanded="true" signature="4832:4901" ph="INSERT INTO users... " />
-            <marker date="1508321391000" expanded="true" signature="5293:5363" ph="SELECT * FRO... users" />
+            <marker date="1508460918000" expanded="true" signature="4474:4488" ph="Select * fro... recipes" />
+            <marker date="1508460918000" expanded="true" signature="4474:4519" ph="Select * fro... ingredient" />
+            <marker date="1508460918000" expanded="true" signature="6584:6610" ph="SELECT * FRO... recipe" />
+            <marker date="1508460918000" expanded="true" signature="6584:6619" ph="SELECT * FRO... recipe" />
+            <marker date="1508460918000" expanded="true" signature="6584:6622" ph="SELECT * FRO... recipe" />
+            <marker date="1508460918000" expanded="true" signature="6776:6845" ph="SELECT * FRO... recipe" />
+            <marker date="1508460918000" expanded="true" signature="7195:7266" ph="select i_nam... ingredient" />
+            <marker date="1508460918000" expanded="true" signature="7596:7640" ph="SELECT * FRO... users" />
+            <marker date="1508460918000" expanded="true" signature="7754:7823" ph="INSERT INTO users... " />
+            <marker date="1508460918000" expanded="true" signature="8215:8285" ph="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>
@@ -790,12 +803,16 @@
         <state relative-caret-position="153">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <marker date="1508321391000" expanded="true" signature="2648:2662" ph="Select * fro... recipes" />
-            <marker date="1508321391000" expanded="true" signature="2648:2693" ph="Select * fro... ingredient" />
-            <marker date="1508321391000" expanded="true" signature="4273:4344" ph="select i_nam... ingredient" />
-            <marker date="1508321391000" expanded="true" signature="4674:4718" ph="SELECT * FRO... users" />
-            <marker date="1508321391000" expanded="true" signature="4832:4901" ph="INSERT INTO users... " />
-            <marker date="1508321391000" expanded="true" signature="5293:5363" ph="SELECT * FRO... users" />
+            <marker date="1508460918000" expanded="true" signature="4474:4488" ph="Select * fro... recipes" />
+            <marker date="1508460918000" expanded="true" signature="4474:4519" ph="Select * fro... ingredient" />
+            <marker date="1508460918000" expanded="true" signature="6584:6610" ph="SELECT * FRO... recipe" />
+            <marker date="1508460918000" expanded="true" signature="6584:6619" ph="SELECT * FRO... recipe" />
+            <marker date="1508460918000" expanded="true" signature="6584:6622" ph="SELECT * FRO... recipe" />
+            <marker date="1508460918000" expanded="true" signature="6776:6845" ph="SELECT * FRO... recipe" />
+            <marker date="1508460918000" expanded="true" signature="7195:7266" ph="select i_nam... ingredient" />
+            <marker date="1508460918000" expanded="true" signature="7596:7640" ph="SELECT * FRO... users" />
+            <marker date="1508460918000" expanded="true" signature="7754:7823" ph="INSERT INTO users... " />
+            <marker date="1508460918000" expanded="true" signature="8215:8285" ph="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>
@@ -892,12 +909,16 @@
         <state relative-caret-position="68">
           <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
-            <marker date="1508321391000" expanded="true" signature="2648:2662" ph="Select * fro... recipes" />
-            <marker date="1508321391000" expanded="true" signature="2648:2693" ph="Select * fro... ingredient" />
-            <marker date="1508321391000" expanded="true" signature="4273:4344" ph="select i_nam... ingredient" />
-            <marker date="1508321391000" expanded="true" signature="4674:4718" ph="SELECT * FRO... users" />
-            <marker date="1508321391000" expanded="true" signature="4832:4901" ph="INSERT INTO users... " />
-            <marker date="1508321391000" expanded="true" signature="5293:5363" ph="SELECT * FRO... users" />
+            <marker date="1508460918000" expanded="true" signature="4474:4488" ph="Select * fro... recipes" />
+            <marker date="1508460918000" expanded="true" signature="4474:4519" ph="Select * fro... ingredient" />
+            <marker date="1508460918000" expanded="true" signature="6584:6610" ph="SELECT * FRO... recipe" />
+            <marker date="1508460918000" expanded="true" signature="6584:6619" ph="SELECT * FRO... recipe" />
+            <marker date="1508460918000" expanded="true" signature="6584:6622" ph="SELECT * FRO... recipe" />
+            <marker date="1508460918000" expanded="true" signature="6776:6845" ph="SELECT * FRO... recipe" />
+            <marker date="1508460918000" expanded="true" signature="7195:7266" ph="select i_nam... ingredient" />
+            <marker date="1508460918000" expanded="true" signature="7596:7640" ph="SELECT * FRO... users" />
+            <marker date="1508460918000" expanded="true" signature="7754:7823" ph="INSERT INTO users... " />
+            <marker date="1508460918000" expanded="true" signature="8215:8285" ph="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>
@@ -915,12 +936,16 @@
         <state relative-caret-position="68">
           <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
           <folding>
-            <marker date="1508321391000" expanded="true" signature="2648:2662" ph="Select * fro... recipes" />
-            <marker date="1508321391000" expanded="true" signature="2648:2693" ph="Select * fro... ingredient" />
-            <marker date="1508321391000" expanded="true" signature="4273:4344" ph="select i_nam... ingredient" />
-            <marker date="1508321391000" expanded="true" signature="4674:4718" ph="SELECT * FRO... users" />
-            <marker date="1508321391000" expanded="true" signature="4832:4901" ph="INSERT INTO users... " />
-            <marker date="1508321391000" expanded="true" signature="5293:5363" ph="SELECT * FRO... users" />
+            <marker date="1508460918000" expanded="true" signature="4474:4488" ph="Select * fro... recipes" />
+            <marker date="1508460918000" expanded="true" signature="4474:4519" ph="Select * fro... ingredient" />
+            <marker date="1508460918000" expanded="true" signature="6584:6610" ph="SELECT * FRO... recipe" />
+            <marker date="1508460918000" expanded="true" signature="6584:6619" ph="SELECT * FRO... recipe" />
+            <marker date="1508460918000" expanded="true" signature="6584:6622" ph="SELECT * FRO... recipe" />
+            <marker date="1508460918000" expanded="true" signature="6776:6845" ph="SELECT * FRO... recipe" />
+            <marker date="1508460918000" expanded="true" signature="7195:7266" ph="select i_nam... ingredient" />
+            <marker date="1508460918000" expanded="true" signature="7596:7640" ph="SELECT * FRO... users" />
+            <marker date="1508460918000" expanded="true" signature="7754:7823" ph="INSERT INTO users... " />
+            <marker date="1508460918000" expanded="true" signature="8215:8285" ph="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>
@@ -944,7 +969,7 @@
     <entry file="file://$PROJECT_DIR$/MealPlanner.py" />
     <entry file="file://$PROJECT_DIR$/config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="256">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="23" />
           <folding />
         </state>
@@ -991,7 +1016,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mealplanner/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="16">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
@@ -1003,13 +1028,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mealplanner/models_food.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
+        <state relative-caret-position="640">
           <caret line="41" column="44" lean-forward="false" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
@@ -1019,7 +1043,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mealplanner/manage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
+        <state relative-caret-position="16">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
@@ -1029,7 +1053,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pushgred.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-204">
+        <state relative-caret-position="1024">
           <caret line="66" column="5" lean-forward="false" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
           <folding>
             <element signature="e#96#105#0" expanded="true" />
@@ -1054,8 +1078,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pushreci.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="120" column="0" lean-forward="true" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+        <state relative-caret-position="1856">
+          <caret line="120" column="0" lean-forward="false" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
           <folding>
             <element signature="e#92#101#0" expanded="true" />
             <marker date="1508321071000" expanded="true" signature="553:663" ph="CREATE TABLE... recipe_category" />
@@ -1085,21 +1109,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-193">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mealplanner/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="150" column="0" lean-forward="false" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+        <state relative-caret-position="234">
+          <caret line="206" column="44" lean-forward="false" selection-start-line="206" selection-start-column="44" selection-end-line="206" selection-end-column="44" />
           <folding>
-            <marker date="1508321391000" expanded="true" signature="2648:2662" ph="Select * fro... recipes" />
-            <marker date="1508321391000" expanded="true" signature="2648:2693" ph="Select * fro... ingredient" />
-            <marker date="1508321391000" expanded="true" signature="4273:4344" ph="select i_nam... ingredient" />
-            <marker date="1508321391000" expanded="true" signature="4674:4718" ph="SELECT * FRO... users" />
-            <marker date="1508321391000" expanded="true" signature="4832:4901" ph="INSERT INTO users... " />
-            <marker date="1508321391000" expanded="true" signature="5293:5363" ph="SELECT * FRO... users" />
+            <marker date="1508460918000" expanded="true" signature="4474:4488" ph="Select * fro... recipes" />
+            <marker date="1508460918000" expanded="true" signature="4474:4519" ph="Select * fro... ingredient" />
+            <marker date="1508460918000" expanded="true" signature="6584:6610" ph="SELECT * FRO... recipe" />
+            <marker date="1508460918000" expanded="true" signature="6584:6619" ph="SELECT * FRO... recipe" />
+            <marker date="1508460918000" expanded="true" signature="6584:6622" ph="SELECT * FRO... recipe" />
+            <marker date="1508460918000" expanded="true" signature="6776:6845" ph="SELECT * FRO... recipe" />
+            <marker date="1508460918000" expanded="true" signature="7195:7266" ph="select i_nam... ingredient" />
+            <marker date="1508460918000" expanded="true" signature="7596:7640" ph="SELECT * FRO... users" />
+            <marker date="1508460918000" expanded="true" signature="7754:7823" ph="INSERT INTO users... " />
+            <marker date="1508460918000" expanded="true" signature="8215:8285" ph="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>

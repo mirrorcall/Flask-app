@@ -150,7 +150,8 @@ def result(query):
 
 
 """
-    :param query    str type that can be any case and return the top 5 result in json format
+    :param      query    str type that can be any case
+    :return     df       the top 5 result in json format
 """
 
 
@@ -179,6 +180,39 @@ def result(query):
 #    print(df)
 
 
+def init_array(query):
+    alist = query.split('-')[:]
+    parray = 'ARRAY['
+    i = 1
+    for x in alist:
+        if i == len(alist):
+            parray += x + ']'
+        else:
+            parray += x + ','
+        i += 1
+
+    return str(parray)
+
+"""
+    :param      query    of str type (recipe title) or int type (ingredient id)
+    :return        
+"""
+@app.route('/search_recipe/<query>', methods=['GET'])
+def search_recipe(query):
+    query = str.lower(str(query))
+    re.sub(r'[^a-zA-Z]', '', query)
+    conn = engine.connect()
+    if re.search(r'\d', query):  # if query is digit check related ingredients id
+
+        sql = "SELECT * FROM recipe WHERE %s <@ i_ids" % init_array(query)  # add LIMIT to restrict to specific # of output
+    else:               # if query is alphabetic check recipes name
+        sql = "SELECT * FROM recipe WHERE lower(r_name) LIKE \'%%%s%%\' ORDER BY rid" \
+              % query  # add LIMIT to restrict to specific # of output
+    rs = conn.execute(sqlalchemy.text(sql))
+    for row in rs:
+        print(row['r_name'])
+
+    print(sql)
 
 
 @app.route('/autocomplete',methods=['GET'])

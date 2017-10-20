@@ -188,10 +188,7 @@ def autocomplete():
 
     print(json.dumps(ingredients))
 
-    df = pd.DataFrame(data=results, columns=['ingredient_id', 'ingredient_name', 'ingredient_category', 'alt-name'])
-    #print(df)
-
-
+    return json.dumps(ingredients)
 
 def init_array(query):
     alist = query.split('-')[:]

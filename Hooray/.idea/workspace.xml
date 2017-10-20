@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1a6145f-e145-4546-98fb-1a3c78359332" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mealplanner/app.py" afterPath="$PROJECT_DIR$/mealplanner/app.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -108,21 +107,21 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mealplanner/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="165" column="16" lean-forward="true" selection-start-line="165" selection-start-column="16" selection-end-line="165" selection-end-column="16" />
+            <state relative-caret-position="220">
+              <caret line="188" column="5" lean-forward="false" selection-start-line="188" selection-start-column="5" selection-end-line="188" selection-end-column="5" />
               <folding>
-                <marker date="1508475498000" expanded="true" signature="4474:4488" ph="Select * fro... recipes" />
-                <marker date="1508475498000" expanded="true" signature="4474:4519" ph="Select * fro... ingredient" />
-                <marker date="1508475498000" expanded="true" signature="5361:5455" ph="SELECT i.* F... ingredient" />
-                <marker date="1508475498000" expanded="true" signature="5361:5528" ph="SELECT i.* F... ingredient" />
-                <marker date="1508475498000" expanded="true" signature="6893:6919" ph="SELECT * FRO... recipe" />
-                <marker date="1508475498000" expanded="true" signature="6893:6928" ph="SELECT * FRO... recipe" />
-                <marker date="1508475498000" expanded="true" signature="6893:6931" ph="SELECT * FRO... recipe" />
-                <marker date="1508475498000" expanded="true" signature="7085:7154" ph="SELECT * FRO... recipe" />
-                <marker date="1508475498000" expanded="true" signature="7507:7578" ph="select i_nam... ingredient" />
-                <marker date="1508475498000" expanded="true" signature="7912:7956" ph="SELECT * FRO... users" />
-                <marker date="1508475498000" expanded="true" signature="8070:8139" ph="INSERT INTO users... " />
-                <marker date="1508475498000" expanded="true" signature="8531:8601" ph="SELECT * FRO... users" />
+                <marker date="1508475586000" expanded="true" signature="4474:4488" ph="Select * fro... recipes" />
+                <marker date="1508475586000" expanded="true" signature="4474:4519" ph="Select * fro... ingredient" />
+                <marker date="1508475586000" expanded="true" signature="5361:5455" ph="SELECT i.* F... ingredient" />
+                <marker date="1508475586000" expanded="true" signature="5361:5528" ph="SELECT i.* F... ingredient" />
+                <marker date="1508475586000" expanded="true" signature="6794:6820" ph="SELECT * FRO... recipe" />
+                <marker date="1508475586000" expanded="true" signature="6794:6829" ph="SELECT * FRO... recipe" />
+                <marker date="1508475586000" expanded="true" signature="6794:6832" ph="SELECT * FRO... recipe" />
+                <marker date="1508475586000" expanded="true" signature="6986:7055" ph="SELECT * FRO... recipe" />
+                <marker date="1508475586000" expanded="true" signature="7408:7479" ph="select i_nam... ingredient" />
+                <marker date="1508475586000" expanded="true" signature="7813:7857" ph="SELECT * FRO... users" />
+                <marker date="1508475586000" expanded="true" signature="7971:8040" ph="INSERT INTO users... " />
+                <marker date="1508475586000" expanded="true" signature="8432:8502" ph="SELECT * FRO... users" />
               </folding>
             </state>
           </provider>
@@ -744,18 +743,18 @@
         <state relative-caret-position="153">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <marker date="1508475498000" expanded="true" signature="4474:4488" ph="Select * fro... recipes" />
-            <marker date="1508475498000" expanded="true" signature="4474:4519" ph="Select * fro... ingredient" />
-            <marker date="1508475498000" expanded="true" signature="5361:5455" ph="SELECT i.* F... ingredient" />
-            <marker date="1508475498000" expanded="true" signature="5361:5528" ph="SELECT i.* F... ingredient" />
-            <marker date="1508475498000" expanded="true" signature="6893:6919" ph="SELECT * FRO... recipe" />
-            <marker date="1508475498000" expanded="true" signature="6893:6928" ph="SELECT * FRO... recipe" />
-            <marker date="1508475498000" expanded="true" signature="6893:6931" ph="SELECT * FRO... recipe" />
-            <marker date="1508475498000" expanded="true" signature="7085:7154" ph="SELECT * FRO... recipe" />
-            <marker date="1508475498000" expanded="true" signature="7507:7578" ph="select i_nam... ingredient" />
-            <marker date="1508475498000" expanded="true" signature="7912:7956" ph="SELECT * FRO... users" />
-            <marker date="1508475498000" expanded="true" signature="8070:8139" ph="INSERT INTO users... " />
-            <marker date="1508475498000" expanded="true" signature="8531:8601" ph="SELECT * FRO... users" />
+            <marker date="1508475586000" expanded="true" signature="4474:4488" ph="Select * fro... recipes" />
+            <marker date="1508475586000" expanded="true" signature="4474:4519" ph="Select * fro... ingredient" />
+            <marker date="1508475586000" expanded="true" signature="5361:5455" ph="SELECT i.* F... ingredient" />
+            <marker date="1508475586000" expanded="true" signature="5361:5528" ph="SELECT i.* F... ingredient" />
+            <marker date="1508475586000" expanded="true" signature="6794:6820" ph="SELECT * FRO... recipe" />
+            <marker date="1508475586000" expanded="true" signature="6794:6829" ph="SELECT * FRO... recipe" />
+            <marker date="1508475586000" expanded="true" signature="6794:6832" ph="SELECT * FRO... recipe" />
+            <marker date="1508475586000" expanded="true" signature="6986:7055" ph="SELECT * FRO... recipe" />
+            <marker date="1508475586000" expanded="true" signature="7408:7479" ph="select i_nam... ingredient" />
+            <marker date="1508475586000" expanded="true" signature="7813:7857" ph="SELECT * FRO... users" />
+            <marker date="1508475586000" expanded="true" signature="7971:8040" ph="INSERT INTO users... " />
+            <marker date="1508475586000" expanded="true" signature="8432:8502" ph="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>
@@ -798,18 +797,18 @@
         <state relative-caret-position="153">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <marker date="1508475498000" expanded="true" signature="4474:4488" ph="Select * fro... recipes" />
-            <marker date="1508475498000" expanded="true" signature="4474:4519" ph="Select * fro... ingredient" />
-            <marker date="1508475498000" expanded="true" signature="5361:5455" ph="SELECT i.* F... ingredient" />
-            <marker date="1508475498000" expanded="true" signature="5361:5528" ph="SELECT i.* F... ingredient" />
-            <marker date="1508475498000" expanded="true" signature="6893:6919" ph="SELECT * FRO... recipe" />
-            <marker date="1508475498000" expanded="true" signature="6893:6928" ph="SELECT * FRO... recipe" />
-            <marker date="1508475498000" expanded="true" signature="6893:6931" ph="SELECT * FRO... recipe" />
-            <marker date="1508475498000" expanded="true" signature="7085:7154" ph="SELECT * FRO... recipe" />
-            <marker date="1508475498000" expanded="true" signature="7507:7578" ph="select i_nam... ingredient" />
-            <marker date="1508475498000" expanded="true" signature="7912:7956" ph="SELECT * FRO... users" />
-            <marker date="1508475498000" expanded="true" signature="8070:8139" ph="INSERT INTO users... " />
-            <marker date="1508475498000" expanded="true" signature="8531:8601" ph="SELECT * FRO... users" />
+            <marker date="1508475586000" expanded="true" signature="4474:4488" ph="Select * fro... recipes" />
+            <marker date="1508475586000" expanded="true" signature="4474:4519" ph="Select * fro... ingredient" />
+            <marker date="1508475586000" expanded="true" signature="5361:5455" ph="SELECT i.* F... ingredient" />
+            <marker date="1508475586000" expanded="true" signature="5361:5528" ph="SELECT i.* F... ingredient" />
+            <marker date="1508475586000" expanded="true" signature="6794:6820" ph="SELECT * FRO... recipe" />
+            <marker date="1508475586000" expanded="true" signature="6794:6829" ph="SELECT * FRO... recipe" />
+            <marker date="1508475586000" expanded="true" signature="6794:6832" ph="SELECT * FRO... recipe" />
+            <marker date="1508475586000" expanded="true" signature="6986:7055" ph="SELECT * FRO... recipe" />
+            <marker date="1508475586000" expanded="true" signature="7408:7479" ph="select i_nam... ingredient" />
+            <marker date="1508475586000" expanded="true" signature="7813:7857" ph="SELECT * FRO... users" />
+            <marker date="1508475586000" expanded="true" signature="7971:8040" ph="INSERT INTO users... " />
+            <marker date="1508475586000" expanded="true" signature="8432:8502" ph="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>
@@ -906,18 +905,18 @@
         <state relative-caret-position="68">
           <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
-            <marker date="1508475498000" expanded="true" signature="4474:4488" ph="Select * fro... recipes" />
-            <marker date="1508475498000" expanded="true" signature="4474:4519" ph="Select * fro... ingredient" />
-            <marker date="1508475498000" expanded="true" signature="5361:5455" ph="SELECT i.* F... ingredient" />
-            <marker date="1508475498000" expanded="true" signature="5361:5528" ph="SELECT i.* F... ingredient" />
-            <marker date="1508475498000" expanded="true" signature="6893:6919" ph="SELECT * FRO... recipe" />
-            <marker date="1508475498000" expanded="true" signature="6893:6928" ph="SELECT * FRO... recipe" />
-            <marker date="1508475498000" expanded="true" signature="6893:6931" ph="SELECT * FRO... recipe" />
-            <marker date="1508475498000" expanded="true" signature="7085:7154" ph="SELECT * FRO... recipe" />
-            <marker date="1508475498000" expanded="true" signature="7507:7578" ph="select i_nam... ingredient" />
-            <marker date="1508475498000" expanded="true" signature="7912:7956" ph="SELECT * FRO... users" />
-            <marker date="1508475498000" expanded="true" signature="8070:8139" ph="INSERT INTO users... " />
-            <marker date="1508475498000" expanded="true" signature="8531:8601" ph="SELECT * FRO... users" />
+            <marker date="1508475586000" expanded="true" signature="4474:4488" ph="Select * fro... recipes" />
+            <marker date="1508475586000" expanded="true" signature="4474:4519" ph="Select * fro... ingredient" />
+            <marker date="1508475586000" expanded="true" signature="5361:5455" ph="SELECT i.* F... ingredient" />
+            <marker date="1508475586000" expanded="true" signature="5361:5528" ph="SELECT i.* F... ingredient" />
+            <marker date="1508475586000" expanded="true" signature="6794:6820" ph="SELECT * FRO... recipe" />
+            <marker date="1508475586000" expanded="true" signature="6794:6829" ph="SELECT * FRO... recipe" />
+            <marker date="1508475586000" expanded="true" signature="6794:6832" ph="SELECT * FRO... recipe" />
+            <marker date="1508475586000" expanded="true" signature="6986:7055" ph="SELECT * FRO... recipe" />
+            <marker date="1508475586000" expanded="true" signature="7408:7479" ph="select i_nam... ingredient" />
+            <marker date="1508475586000" expanded="true" signature="7813:7857" ph="SELECT * FRO... users" />
+            <marker date="1508475586000" expanded="true" signature="7971:8040" ph="INSERT INTO users... " />
+            <marker date="1508475586000" expanded="true" signature="8432:8502" ph="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>
@@ -935,18 +934,18 @@
         <state relative-caret-position="68">
           <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
           <folding>
-            <marker date="1508475498000" expanded="true" signature="4474:4488" ph="Select * fro... recipes" />
-            <marker date="1508475498000" expanded="true" signature="4474:4519" ph="Select * fro... ingredient" />
-            <marker date="1508475498000" expanded="true" signature="5361:5455" ph="SELECT i.* F... ingredient" />
-            <marker date="1508475498000" expanded="true" signature="5361:5528" ph="SELECT i.* F... ingredient" />
-            <marker date="1508475498000" expanded="true" signature="6893:6919" ph="SELECT * FRO... recipe" />
-            <marker date="1508475498000" expanded="true" signature="6893:6928" ph="SELECT * FRO... recipe" />
-            <marker date="1508475498000" expanded="true" signature="6893:6931" ph="SELECT * FRO... recipe" />
-            <marker date="1508475498000" expanded="true" signature="7085:7154" ph="SELECT * FRO... recipe" />
-            <marker date="1508475498000" expanded="true" signature="7507:7578" ph="select i_nam... ingredient" />
-            <marker date="1508475498000" expanded="true" signature="7912:7956" ph="SELECT * FRO... users" />
-            <marker date="1508475498000" expanded="true" signature="8070:8139" ph="INSERT INTO users... " />
-            <marker date="1508475498000" expanded="true" signature="8531:8601" ph="SELECT * FRO... users" />
+            <marker date="1508475586000" expanded="true" signature="4474:4488" ph="Select * fro... recipes" />
+            <marker date="1508475586000" expanded="true" signature="4474:4519" ph="Select * fro... ingredient" />
+            <marker date="1508475586000" expanded="true" signature="5361:5455" ph="SELECT i.* F... ingredient" />
+            <marker date="1508475586000" expanded="true" signature="5361:5528" ph="SELECT i.* F... ingredient" />
+            <marker date="1508475586000" expanded="true" signature="6794:6820" ph="SELECT * FRO... recipe" />
+            <marker date="1508475586000" expanded="true" signature="6794:6829" ph="SELECT * FRO... recipe" />
+            <marker date="1508475586000" expanded="true" signature="6794:6832" ph="SELECT * FRO... recipe" />
+            <marker date="1508475586000" expanded="true" signature="6986:7055" ph="SELECT * FRO... recipe" />
+            <marker date="1508475586000" expanded="true" signature="7408:7479" ph="select i_nam... ingredient" />
+            <marker date="1508475586000" expanded="true" signature="7813:7857" ph="SELECT * FRO... users" />
+            <marker date="1508475586000" expanded="true" signature="7971:8040" ph="INSERT INTO users... " />
+            <marker date="1508475586000" expanded="true" signature="8432:8502" ph="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>
@@ -1125,21 +1124,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mealplanner/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="165" column="16" lean-forward="true" selection-start-line="165" selection-start-column="16" selection-end-line="165" selection-end-column="16" />
+        <state relative-caret-position="220">
+          <caret line="188" column="5" lean-forward="false" selection-start-line="188" selection-start-column="5" selection-end-line="188" selection-end-column="5" />
           <folding>
-            <marker date="1508475498000" expanded="true" signature="4474:4488" ph="Select * fro... recipes" />
-            <marker date="1508475498000" expanded="true" signature="4474:4519" ph="Select * fro... ingredient" />
-            <marker date="1508475498000" expanded="true" signature="5361:5455" ph="SELECT i.* F... ingredient" />
-            <marker date="1508475498000" expanded="true" signature="5361:5528" ph="SELECT i.* F... ingredient" />
-            <marker date="1508475498000" expanded="true" signature="6893:6919" ph="SELECT * FRO... recipe" />
-            <marker date="1508475498000" expanded="true" signature="6893:6928" ph="SELECT * FRO... recipe" />
-            <marker date="1508475498000" expanded="true" signature="6893:6931" ph="SELECT * FRO... recipe" />
-            <marker date="1508475498000" expanded="true" signature="7085:7154" ph="SELECT * FRO... recipe" />
-            <marker date="1508475498000" expanded="true" signature="7507:7578" ph="select i_nam... ingredient" />
-            <marker date="1508475498000" expanded="true" signature="7912:7956" ph="SELECT * FRO... users" />
-            <marker date="1508475498000" expanded="true" signature="8070:8139" ph="INSERT INTO users... " />
-            <marker date="1508475498000" expanded="true" signature="8531:8601" ph="SELECT * FRO... users" />
+            <marker date="1508475586000" expanded="true" signature="4474:4488" ph="Select * fro... recipes" />
+            <marker date="1508475586000" expanded="true" signature="4474:4519" ph="Select * fro... ingredient" />
+            <marker date="1508475586000" expanded="true" signature="5361:5455" ph="SELECT i.* F... ingredient" />
+            <marker date="1508475586000" expanded="true" signature="5361:5528" ph="SELECT i.* F... ingredient" />
+            <marker date="1508475586000" expanded="true" signature="6794:6820" ph="SELECT * FRO... recipe" />
+            <marker date="1508475586000" expanded="true" signature="6794:6829" ph="SELECT * FRO... recipe" />
+            <marker date="1508475586000" expanded="true" signature="6794:6832" ph="SELECT * FRO... recipe" />
+            <marker date="1508475586000" expanded="true" signature="6986:7055" ph="SELECT * FRO... recipe" />
+            <marker date="1508475586000" expanded="true" signature="7408:7479" ph="select i_nam... ingredient" />
+            <marker date="1508475586000" expanded="true" signature="7813:7857" ph="SELECT * FRO... users" />
+            <marker date="1508475586000" expanded="true" signature="7971:8040" ph="INSERT INTO users... " />
+            <marker date="1508475586000" expanded="true" signature="8432:8502" ph="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>

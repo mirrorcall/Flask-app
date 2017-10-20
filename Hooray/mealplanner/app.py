@@ -9,6 +9,7 @@ from sqlalchemy.sql import text
 from sqlalchemy import Table, Column, Integer, String, ForeignKey
 import pandas as pd
 import sys
+from fuzzywuzzy import fuzz
 
 
 app = Flask(__name__)
@@ -21,6 +22,11 @@ db.init_app(app)
 # The return value of create_engine() is our connection object
 engine = sqlalchemy.create_engine(app.config['SQLALCHEMY_DATABASE_URI'], client_encoding='utf8')
 
+def getIDforIngredient(name):
+    conn = engine.connect()
+    sql = "SELECT * FROM ingredient WHERE ingredient.i_name = %s" % (name)
+    result = conn.execute(sql).fetchone()
+    return result['iid']
 
 '''
 if not con.dialect.has_table(con, 'recipe'):  # If table don't exist, Create.
@@ -89,10 +95,11 @@ def main(tags=None):
         #print('query')
         #print(_query)
         if request.form['submit'] == 'Search':
+            tagarray.append(_query)
             try:
                 form = SearchForm()
                 #_query = request.form['query']
-                return redirect(url_for('result', query=_query))
+                return redirect(url_for('search_recipe', query=tagarray))
             except Exception as e:
                 form = SearchForm()
                 return render_template('index.html',
@@ -165,30 +172,32 @@ def autocomplete():
     unique_list = []
     results = []
     conn = engine.connect()
-    sql = 'SELECT i.* FROM ingredient i, UNNEST(alt_names) names WHERE (lower(i_name) LIKE \'%s%s%s\') OR ' \
-          '(lower(names) LIKE \'%s%s%s\') ORDER BY iid ASC LIMIT 100' % ('%', query, '%', '%', query, '%')
+    sql = 'SELECT i.* FROM ingredient i, UNNEST(alt_names) names WHERE (lower(i_name) ~ \'(^|\\s)%s\') OR ' \
+          '(lower(names) ~ \'(^|\\s)%s\') ORDER BY iid ASC LIMIT 100' % (query, query)
     rs = conn.execute(sqlalchemy.text(sql))
+    results = []
+    unique_list = []
     for row in rs:
-        if row['i_name'] not in unique_list:
-            unique_list.append(row['i_name'])
-            results.append(row)
+        if row['i_name'] in unique_list:
+            continue
+        unique_list.append(row['i_name'])
+        all_names = [row['i_name']] + row['alt_names']
+        all_names.sort(key = lambda name: fuzz.ratio(query, name), reverse=True)
+        results.append((all_names[0], fuzz.ratio(query, all_names[0])))
 
-        if len(unique_list) == 5:
-            break
+    results.sort(key = lambda res: res[1], reverse = True)
+    results = [r[0] for r in results]
 
-    rs.close()
+    if(len(results) > 5):
+        max_res = 4
+    else:
+        max_res = len(results)-1
 
-    for res in results:
-        if query in str.lower(res['i_name']):
-            ingredients[res['iid']] = res['i_name']
-        else:
-            for x in res['alt_names']:
-                if query in str.lower(x):
-                    ingredients[res['iid']] = x
+    results = results[0:max_res]
+    
+    print(jsonify(matching_result=results))
 
-    print(json.dumps(ingredients))
-
-    return json.dumps(ingredients)
+    return jsonify(matching_results=results)
 
 def init_array(query):
     alist = query.split('-')[:]
@@ -210,9 +219,17 @@ def init_array(query):
 """
 @app.route('/search_recipe/<query>', methods=['GET'])
 def search_recipe(query):
+    print(query)
     query = str.lower(str(query))
     re.sub(r'[^a-zA-Z]', '', query)
+    query = re.search("'.*'", query, flags=0).group()
+    query = re.sub("'", '', query)
     conn = engine.connect()
+    print(query)
+    name = []
+    desc = []
+    img = []
+    
     if re.search(r'\d', query):  # if query is digit check related ingredients id
         sql = "SELECT * FROM recipe WHERE %s <@ i_ids" % init_array(query)  # add LIMIT to restrict to specific # of output
     else:               # if query is alphabetic check recipes name
@@ -220,9 +237,17 @@ def search_recipe(query):
               % query  # add LIMIT to restrict to specific # of output
     rs = conn.execute(sqlalchemy.text(sql))
     for row in rs:
-        print(row['r_name'])
+        res = []
+        res.append(row['r_img'])
+        res.append(row['r_name'])
+        res.append(row['r_description'])
+        res.append(row['r_url'])
+        img.extend([res])
+        print(img)
+
 
     print(sql)
+    return render_template('result.html', img = img)
 
 '''
 @app.route('/autocomplete',methods=['GET'])
@@ -240,7 +265,7 @@ def autocomplete():
     #cursor.close()
     conn.close()
 
-
+    print(jsonify(matching_results=results))
     return jsonify(matching_results=results)
 '''
 

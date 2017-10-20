@@ -7,11 +7,11 @@ import os
 CONTEXT_DIR = os.path.abspath(os.path.dirname(__file__))
 
 POSTGRES = {
-    'user': 'postgres',
-    'pw': 'mirrorcall',     # modify this line to match your db password
-    'db': 'planner',
+    'user': 'sharon',
+    'pw': 'sharon',     # modify this line to match your db password
+    'db': 'recipe',
     'host': 'localhost',
-    'port': '5433',         # modify this line to your default port - 5432
+    'port': '5432',         # modify this line to your default port - 5432
 }
 
 SQLALCHEMY_DATABASE_URI = 'postgresql://%(user)s:%(pw)s@%(host)s:%(port)s/%(db)s' % POSTGRES

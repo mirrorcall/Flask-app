@@ -10,22 +10,11 @@ conn = psycopg2.connect(database="planner", user="postgres",
                         port="5432")
 cur = conn.cursor()
 
-
-
 def main():
     global conn
     global curr
 
-    sql = 'DROP TABLE IF EXISTS users CASCADE;'
-    cur.execute(sql)
-
-    sql = "CREATE TABLE users (uid SERIAL4 PRIMARY KEY,u_email VARCHAR UNIQUE NOT NULL, u_password VARCHAR NOT NULL);"
-    cur.execute(sql)
-
-    sql = 'DROP TABLE IF EXISTS user_ingredients CASCADE;'
-    cur.execute(sql)
-
-    sql = "CREATE TABLE user_ingredients (u_email VARCHAR NOT NULL,i_name VARCHAR NOT NULL);"
+    sql = "CREATE TABLE users (uid SERIAL4 PRIMARY KEY,u_name VARCHAR NOT NULL,u_email VARCHAR UNIQUE NOT NULL, u_password VARCHAR NOT NULL);"
     cur.execute(sql)
 
     conn.commit()

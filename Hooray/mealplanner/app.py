@@ -9,7 +9,6 @@ from sqlalchemy.sql import text
 from sqlalchemy import Table, Column, Integer, String, ForeignKey
 import pandas as pd
 import sys
-from fuzzywuzzy import fuzz
 
 
 app = Flask(__name__)
@@ -55,28 +54,44 @@ toInsert = [
 
 # con.execute(meta.tables['ingredients'].insert(), toInsert)
 
-def saveIngredient(ingredient):
-    if 'userEmail' in session:
-        conn = engine.connect()
-        sql = "INSERT INTO user_ingredients(u_email,i_name) VALUES ('%s','%s')" % (session['userEmail'],ingredient)
-        result = conn.execute(sql)
+
 
 # main page
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/<tags>', methods=['GET', 'POST'])
 def main(tags=None): 
+    #alltags2=[]
+    #newtags2=[]
     tagarray=[]
     gettags = tags
+    #print(tags)
+    #print('HUDWHIHD')
     if tags != None:
+        #alltags2.extend([tags])
         tagarray=gettags.split(",")
+        #gettagsfix = re.search("'.*'", gettags, flags =0).group()
+        #gettagsfix = re.sub("'", '', gettagsfix)
+        #stringtags = ''.join(alltags2)
         tagarray= [re.search("'.*'", elem, flags=0).group() for elem in tagarray]
         tagarray= [re.sub("'", '', elem) for elem in tagarray]
+        #newtags2.extend([gettagsfix])
+        #stringtags = re.sub(']', '', stringtags)
+        #stringtags = re.sub('[', '', stringtags)
         
+        #stringt2 = re.sub("'", '', stringt.group())
+        #print('string')
+        
+        #print(tagarray)
+       # print('stringend')
     if request.method == 'POST':
+        print('if', file=sys.stderr)
         _query = request.form['query']
+        #print('query')
+        #print(_query)
         if request.form['submit'] == 'Search':
             try:
                 form = SearchForm()
+                #_query = request.form['query']
                 return redirect(url_for('result', query=_query))
             except Exception as e:
                 form = SearchForm()
@@ -85,13 +100,19 @@ def main(tags=None):
                                        form=form)
 
         if request.form['submit'] == 'Add':
+            #print('1')
             tagarray.append(_query)
-            saveIngredient(_query)
+            #print(tagarray)
             for tag in tagarray:
                 print(tag)
             try:
                 form = SearchForm()
+                #_query = request.form['query']
+                #tags.append(_query)
                 return redirect(url_for('main', tags=tagarray))
+                #return render_template('index.html',
+                #                       title='Home',
+                #                       form=form, tags=_query)
 
             except Exception as e:
                 form = SearchForm()
@@ -100,7 +121,12 @@ def main(tags=None):
                                        form=form)
 
     else:
+        print('else', file=sys.stderr)
         form = SearchForm()
+        # if form.validate_on_submit():
+        #    flash('Search requested for query="%s"' %
+        #          (form.query.data))
+        #    return redirect(url_for('result', query=form.query.data), evidence=form.evidence.data)
         return render_template('index.html',
                                title='Search',
                                form=form, tags=tagarray)
@@ -123,7 +149,6 @@ def result(query):
                            form=form, data=df.to_html())
 
 
-
 """
     :param      query    str type that can be any case
     :return     df       the top 5 result in json format
@@ -140,32 +165,30 @@ def autocomplete():
     unique_list = []
     results = []
     conn = engine.connect()
-    sql = 'SELECT i.* FROM ingredient i, UNNEST(alt_names) names WHERE (lower(i_name) ~ \'(^|\\s)%s\') OR ' \
-          '(lower(names) ~ \'(^|\\s)%s\') ORDER BY iid ASC LIMIT 100' % (query, query)
+    sql = 'SELECT i.* FROM ingredient i, UNNEST(alt_names) names WHERE (lower(i_name) LIKE \'%s%s%s\') OR ' \
+          '(lower(names) LIKE \'%s%s%s\') ORDER BY iid ASC LIMIT 100' % ('%', query, '%', '%', query, '%')
     rs = conn.execute(sqlalchemy.text(sql))
-    results = []
-    unique_list = []
     for row in rs:
-        if row['i_name'] in unique_list:
-            continue
-        unique_list.append(row['i_name'])
-        all_names = [row['i_name']] + row['alt_names']
-        all_names.sort(key = lambda name: fuzz.ratio(query, name), reverse=True)
-        results.append((all_names[0], fuzz.ratio(query, all_names[0])))
+        if row['i_name'] not in unique_list:
+            unique_list.append(row['i_name'])
+            results.append(row)
 
-    results.sort(key = lambda res: res[1], reverse = True)
-    results = [r[0] for r in results]
+        if len(unique_list) == 5:
+            break
 
-    if(len(results) > 5):
-        max_res = 4
-    else:
-        max_res = len(results)-1
+    rs.close()
 
-    results = results[0:max_res]
-    
-    print(jsonify(matching_result=results))
+    for res in results:
+        if query in str.lower(res['i_name']):
+            ingredients[res['iid']] = res['i_name']
+        else:
+            for x in res['alt_names']:
+                if query in str.lower(x):
+                    ingredients[res['iid']] = x
 
-    return jsonify(matching_results=results)
+    print(json.dumps(ingredients))
+
+    return json.dumps(ingredients)
 
 def init_array(query):
     alist = query.split('-')[:]
@@ -187,17 +210,9 @@ def init_array(query):
 """
 @app.route('/search_recipe/<query>', methods=['GET'])
 def search_recipe(query):
-    print(query)
     query = str.lower(str(query))
     re.sub(r'[^a-zA-Z]', '', query)
-    query = re.search("'.*'", query, flags=0).group()
-    query = re.sub("'", '', query)
     conn = engine.connect()
-    print(query)
-    name = []
-    desc = []
-    img = []
-    
     if re.search(r'\d', query):  # if query is digit check related ingredients id
         sql = "SELECT * FROM recipe WHERE %s <@ i_ids" % init_array(query)  # add LIMIT to restrict to specific # of output
     else:               # if query is alphabetic check recipes name
@@ -205,17 +220,29 @@ def search_recipe(query):
               % query  # add LIMIT to restrict to specific # of output
     rs = conn.execute(sqlalchemy.text(sql))
     for row in rs:
-        res = []
-        res.append(row['r_img'])
-        res.append(row['r_name'])
-        res.append(row['r_description'])
-        res.append(row['r_url'])
-        img.extend([res])
-        print(img)
-
+        print(row['r_name'])
 
     print(sql)
-    return render_template('result.html', img = img)
+
+'''
+@app.route('/autocomplete',methods=['GET'])
+def autocomplete():
+
+    search = request.args.get('q')
+    conn = engine.connect()
+    #cursor = conn.cursor()
+    sql="select i_name from ingredient where i_name like '%"+search+"%' limit 10"
+    rs=conn.execute(sqlalchemy.text(sql))
+    symbols = rs.fetchall()
+    results = [mv[0] for mv in symbols]
+    print(results)
+    
+    #cursor.close()
+    conn.close()
+
+
+    return jsonify(matching_results=results)
+'''
 
 @app.route('/signUpUser', methods = ['GET','POST'])
 def signUpUser():
@@ -223,7 +250,7 @@ def signUpUser():
     sql = "SELECT * FROM users WHERE users.u_email='%s'" % (request.form['inputEmail'])
     result = conn.execute(sql).fetchall()
     if len(result) < 1 and request.form['inputPassword'] == request.form['inputPasswordRpt']:
-        sql = "INSERT INTO users (u_email,u_password) VALUES ('%s','%s');" % (request.form['inputEmail'],request.form['inputPassword'])
+        sql = "INSERT INTO users (u_name,u_email,u_password) VALUES ('%s','%s','%s');" % ('',request.form['inputEmail'],request.form['inputPassword'])
         conn.execute(sql)
     return redirect(url_for('main'))
 

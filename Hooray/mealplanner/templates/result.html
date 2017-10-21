@@ -7,19 +7,19 @@
 <!--recipe[0]:source site, recipe[1]:recipe name, recipe[2]:recipe desc.-->
 {% for recipe in recipes %}
     {% if loop.index0 == 0 %}
-<div class="container-fluid text-center">
+<div class="container-fluid">
     <div class="row">
     {% endif %}
         <div class = "col-sm-3">
             <div class ="col-sm-1">
             </div>
-            <div class="col-sm-12">
+            <div class="col-sm-12 text-left">
                 <img src={{recipe[0]}} alt="recipe" style="width:157.5px;height:97px;">
                 <div class="row">
-                    <div class="col-sm-12">
-                        <h3><a href={{recipe[3]}}>{{recipe[1]}} </a></h3>
+                    <div class="col-sm-12 text-center">
+                        <h3><a href={{recipe[3]}}>{{recipe[1] | truncate(35)}} </a></h3>
                     
-                        <div class="row">
+                        <div class="row text-left">
                             <div class="col-sm-12">
                                 <p>
                                     {{recipe[2] | truncate(100)}}
@@ -33,7 +33,7 @@
     {% if loop.index %mod == 0 and loop.index != 1 %}
     </div>
 </div>
-<div class="container-fluid text-center">
+<div class="container-fluid">
     <div class="row">
     {% endif %}
 {% endfor %}

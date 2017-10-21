@@ -196,9 +196,9 @@ def search_recipe(query):
     query = re.sub("'", '', query)
     conn = engine.connect()
     print(query)
-    name = []
-    desc = []
-    img = []
+    #name = []
+    #desc = []
+    recipes = []
     
     if re.search(r'\d', query):  # if query is digit check related ingredients id
         sql = "SELECT * FROM recipe WHERE %s <@ i_ids" % init_array(query)  # add LIMIT to restrict to specific # of output
@@ -212,12 +212,12 @@ def search_recipe(query):
         res.append(row['r_name'])
         res.append(row['r_description'])
         res.append(row['r_url'])
-        img.extend([res])
-        print(img)
+        recipes.extend([res])
+        print(recipes)
 
 
     print(sql)
-    return render_template('result.html', img = img)
+    return render_template('result.html', recipes = recipes, mod = 4)
 
 '''
 @app.route('/autocomplete',methods=['GET'])
@@ -244,14 +244,10 @@ def signUpUser():
     conn = engine.connect()
     sql = "SELECT * FROM users WHERE users.u_email='%s'" % (request.form['inputEmail'])
     result = conn.execute(sql).fetchall()
-    if len(result) < 1:
-        sql = "INSERT INTO users (u_name,u_email,u_password) VALUES ('%s','%s','%s');" % (request.form['inputName'],request.form['inputEmail'],request.form['inputPassword'])
+    if len(result) < 1 and request.form['inputPassword'] == request.form['inputPasswordRpt']:
+        sql = "INSERT INTO users (u_name,u_email,u_password) VALUES ('%s','%s','%s');" % ('',request.form['inputEmail'],request.form['inputPassword'])
         conn.execute(sql)
     return redirect(url_for('main'))
-
-@app.route('/signUp', methods = ['GET','POST'])
-def signUp():      
-    return render_template('signup.html', title= 'Sign Up')
 
 @app.route('/signInUser', methods = ['GET','POST'])
 def signInUser():
@@ -262,10 +258,6 @@ def signInUser():
         session['userEmail'] = request.form['inputEmail']
 
     return redirect(url_for('main'))
-
-@app.route('/signIn', methods = ['GET','POST'])
-def signIn():      
-    return render_template('signin.html', title= 'Sign In')
 
 @app.route('/signOut', methods = ['GET','POST'])
 def signOut():

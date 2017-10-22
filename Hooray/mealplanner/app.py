@@ -212,7 +212,7 @@ def search_recipe(query):
 
     recipes = []
 
-    sql = "SELECT r_name, r_img, r_description, r_url, i_ids, (100.0*array_length(i_ids & %s,1))/array_length(i_ids,1) AS ct FROM recipe ORDER  BY 6 DESC NULLS LAST LIMIT 5 OFFSET 0" % init_array(qlist)  # add LIMIT to restrict to specific # of output
+    sql = "SELECT r_name, r_img, r_description, r_url, i_ids, (100.0*array_length(i_ids & %s,1))/array_length(i_ids,1) AS ct FROM recipe ORDER  BY 6 DESC NULLS LAST LIMIT 100 OFFSET 0" % init_array(qlist)  # add LIMIT to restrict to specific # of output
     rs = conn.execute(sqlalchemy.text(sql))
     for row in rs:
         res = []

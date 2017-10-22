@@ -17,6 +17,13 @@
                 minLength: 1,
                 select: function (event, ui) {
                     console.log(ui.item.value); // not in your question, but might help later
+                },
+                selectFirst: true,
+                change: function (event, ui) {
+                    if (ui.item == null) {
+                        $("#query").val('');
+                        $("#query").focus();
+                    }
                 }
             });
         });
@@ -30,39 +37,64 @@
         }
 
     </script>
-        <h1>Search</h1>
-        <form action="" method="post" name="search">
-          {{ form.hidden_tag() }}
-        <p>
-            Please enter your keyword below:<br>
-            
-            {{ form.query(size=80) }}
-            {% for error in form.query.errors %}
-            <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}<br>
-        </p>
-            
-            <input type="text" value="" id="tags" class="div-tag">
-            
-            <script>
-                
-                $('.div-tag').tagsinput({
-                    allowDuplicates: true,
-                    itemValue: 'id',  // this will be used to set id of tag
-                    itemText: 'label' // this will be used to set text of tag
-                });
-           
-                $("#tag").on('itemRemoved', function (event) {
-                    console.log('item removed : ' + event.item);
-                });
-            </script>
-            {%for tag in tags%}
-            <script>
-                var tag = '{{ tag }}'
-                $('.div-tag').tagsinput('add', { id: 'tags', label: tag });
-            </script>
-            {% endfor %}
-        <p><input type="submit" name="submit" value="Add"><input type="submit" name="submit" value="Search"></p>
+    <style>
+        .bootstrap-tagsinput {
+            background-color: #fff;
+            border: 0px solid #ccc;
+            box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.075);
+            display: inline-block;
+            padding: 4px 6px;
+            color: #555;
+            vertical-align: middle;
+            border-radius: 4px;
+            max-width: 100%;
+            line-height: 22px;
+            cursor: text;
+        }
+    </style>
+    <div class="container">
+        <br />
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-9">
+                <h1>Search</h1>
+                <form action="" method="post" name="search">
+                    {{ form.hidden_tag() }}
+                    <p>
+                        Enter ingredients:<br>
 
-        </form>
+                        {{ form.query(size=80) }}
+                        {% for error in form.query.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}<br>
+                    </p>
+
+                    <input type="text" value="" id="tags" class="div-tag">
+
+                    <script>
+
+                        $('.div-tag').tagsinput({
+                            allowDuplicates: true,
+                            itemValue: 'id',  // this will be used to set id of tag
+                            itemText: 'label' // this will be used to set text of tag
+                        });
+
+                        $("#tag").on('itemRemoved', function (event) {
+                            console.log('item removed : ' + event.item);
+                        });
+                    </script>
+                    {%for tag in tags%}
+                    <script>
+                        var tag = '{{ tag }}'
+                        $('.div-tag').tagsinput('add', { id: 'tags', label: tag });
+                    </script>
+                    {% endfor %}
+                    <p><input type="submit" name="submit" value="Add"><input type="submit" name="submit" value="Search"></p>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% block result %}{% endblock %}
 {% endblock %}

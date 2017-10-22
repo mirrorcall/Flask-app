@@ -1,9 +1,12 @@
 <!-- extend base layout -->
-{% extends "base.html" %}
+{% extends "index.html" %}
 
-{% block content %}
+{% block result %}
+<p></p>
+<p></p>
 
-<h1>Results</h1>
+<!---<h1>Results</h1>-->
+<br />
 <!--recipe[0]:source site, recipe[1]:recipe name, recipe[2]:recipe desc.-->
 {% for recipe in recipes %}
     {% if loop.index0 == 0 %}

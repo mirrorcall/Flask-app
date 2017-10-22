@@ -78,9 +78,48 @@ def main(tags=None):
         _query = request.form['query']
         if request.form['submit'] == 'Search':
             tagarray.append(_query)
+
+            qlist = []
+            #query = ast.literal_eval(tagarray)
+            query = tagarray
+            print(query)
+            for q in query:
+                if q != '':
+                    iid = getIDforIngredient(str(q).lower())
+                if iid is not None:
+                    qlist.append(iid)
+
+            create_extension()
+
+            conn = engine.connect()
+
+            recipes = []
+
+            sql = "SELECT r_name, r_img, r_description, r_url, i_ids, (100.0*array_length(i_ids & %s,1))/array_length(i_ids,1) AS ct FROM recipe ORDER  BY 6 DESC NULLS LAST LIMIT 100 OFFSET 0" % init_array(qlist)  # add LIMIT to restrict to specific # of output
+            rs = conn.execute(sqlalchemy.text(sql))
+            for row in rs:
+                res = []
+                res.append(row['r_img'])
+                res.append(row['r_name'])
+                res.append(row['r_description'])
+                res.append(row['r_url'])
+                print(round(len(qlist)/len(row['i_ids']),2))
+                res.append(round(len(qlist)/len(row['i_ids']),2))
+                recipes.extend([res])
+                print(recipes)
+
+
+            #print(sql)
+            #form = SearchForm()
+            #return render_template('result.html', recipes = recipes, mod = 4, form=form)
+
+
+
+
+
             try:
                 form = SearchForm()
-                return redirect(url_for('search_recipe', query=tagarray))
+                return render_template('result.html', recipes = recipes, mod = 4, form=form)
             except Exception as e:
                 form = SearchForm()
                 return render_template('index.html',
@@ -105,10 +144,10 @@ def main(tags=None):
         print('else', file=sys.stderr)
         form = SearchForm()
         # if form.validate_on_submit():
-        return render_template('index.html',
+        return render_template('result.html',
                                title='Search',
                                form=form, tags=tagarray)
-    return render_template('index.html')
+    return render_template('result.html')
 
 
 # result page
@@ -227,7 +266,8 @@ def search_recipe(query):
 
 
     #print(sql)
-    return render_template('result.html', recipes = recipes, mod = 4)
+    form = SearchForm()
+    return render_template('result.html', recipes = recipes, mod = 4, form=form)
 
 '''
 @app.route('/autocomplete',methods=['GET'])

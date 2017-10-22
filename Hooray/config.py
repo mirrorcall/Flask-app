@@ -7,8 +7,8 @@ import os
 CONTEXT_DIR = os.path.abspath(os.path.dirname(__file__))
 
 POSTGRES = {
-    'user': 'sharon',
-    'pw': 'sharon',     # modify this line to match your db password
+    'user': 'postgres',
+    'pw': 'Sharon0108',     # modify this line to match your db password
     'db': 'recipe',
     'host': 'localhost',
     'port': '5432',         # modify this line to your default port - 5432

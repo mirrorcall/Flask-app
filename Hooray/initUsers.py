@@ -5,8 +5,8 @@ import re
 import psycopg2
 
 # change postgres server at the beginning
-conn = psycopg2.connect(database="planner", user="postgres",
-                        password="robert", host="localhost",
+conn = psycopg2.connect(database="recipe", user="postgres",
+                        password="Sharon0108", host="localhost",
                         port="5432")
 cur = conn.cursor()
 

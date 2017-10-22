@@ -1,5 +1,5 @@
 import re
-
+import ast
 from flask_sqlalchemy import SQLAlchemy
 #from mealplanner import models_food
 from flask import Flask, redirect, render_template, json, request, jsonify, url_for, session
@@ -24,9 +24,10 @@ engine = sqlalchemy.create_engine(app.config['SQLALCHEMY_DATABASE_URI'], client_
 
 def getIDforIngredient(name):
     conn = engine.connect()
-    sql = "SELECT * FROM ingredient WHERE ingredient.i_name = %s" % (name)
+    sql = "SELECT i.* FROM ingredient i, UNNEST(alt_names) names WHERE (lower(i_name) = \'%s\') OR (lower(names) = \'%s\')" % (name, name)
+    print(sql)
     result = conn.execute(sql).fetchone()
-    return result['iid']
+    return result['iid'] if result['iid'] is not None else None
 
 '''
 if not con.dialect.has_table(con, 'recipe'):  # If table don't exist, Create.
@@ -169,17 +170,16 @@ def autocomplete():
 
     return jsonify(matching_results=results)
 
-def init_array(query):
-    alist = query.split('-')[:]
+def init_array(alist):
     parray = 'ARRAY['
     i = 1
     for x in alist:
         if i == len(alist):
-            parray += x + ']'
+            parray += str(x) + ']'
         else:
-            parray += x + ','
+            parray += str(x) + ','
         i += 1
-
+    print(parray)
     return str(parray)
 
 
@@ -187,24 +187,23 @@ def init_array(query):
     :param      query    of str type (recipe title) or int type (ingredient id)
     :return        
 """
+
 @app.route('/search_recipe/<query>', methods=['GET'])
 def search_recipe(query):
+    qlist = []
+    query = ast.literal_eval(query)
     print(query)
-    query = str.lower(str(query))
-    re.sub(r'[^a-zA-Z]', '', query)
-    query = re.search("'.*'", query, flags=0).group()
-    query = re.sub("'", '', query)
+    for q in query:
+        if q != '':
+            iid = getIDforIngredient(str(q).lower())
+            if iid is not None:
+                qlist.append(iid)
+
     conn = engine.connect()
-    print(query)
-    #name = []
-    #desc = []
+
     recipes = []
-    
-    if re.search(r'\d', query):  # if query is digit check related ingredients id
-        sql = "SELECT * FROM recipe WHERE %s <@ i_ids" % init_array(query)  # add LIMIT to restrict to specific # of output
-    else:               # if query is alphabetic check recipes name
-        sql = "SELECT * FROM recipe WHERE lower(r_name) LIKE \'%%%s%%\' ORDER BY rid" \
-              % query  # add LIMIT to restrict to specific # of output
+
+    sql = "SELECT * FROM recipe WHERE %s <@ i_ids" % init_array(qlist)  # add LIMIT to restrict to specific # of output
     rs = conn.execute(sqlalchemy.text(sql))
     for row in rs:
         res = []
@@ -212,11 +211,13 @@ def search_recipe(query):
         res.append(row['r_name'])
         res.append(row['r_description'])
         res.append(row['r_url'])
+        print(round(len(qlist)/len(row['i_ids']),2))
+        res.append(round(len(qlist)/len(row['i_ids']),2))
         recipes.extend([res])
         print(recipes)
 
 
-    print(sql)
+    #print(sql)
     return render_template('result.html', recipes = recipes, mod = 4)
 
 '''

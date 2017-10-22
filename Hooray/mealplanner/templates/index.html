@@ -51,6 +51,10 @@
                     itemValue: 'id',  // this will be used to set id of tag
                     itemText: 'label' // this will be used to set text of tag
                 });
+           
+                $("#tag").on('itemRemoved', function (event) {
+                    console.log('item removed : ' + event.item);
+                });
             </script>
             {%for tag in tags%}
             <script>

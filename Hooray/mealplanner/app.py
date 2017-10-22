@@ -65,23 +65,20 @@ toInsert = [
 
 # main page
 @app.route('/', methods=['GET', 'POST'])
-@app.route('/<tags>', methods=['GET', 'POST'])
-def main(tags=None): 
-    tagarray=[]
-    gettags = tags
-    if tags != None:
-        tagarray=gettags.split(",")
-        tagarray= [re.search("'.*'", elem, flags=0).group() for elem in tagarray]
-        tagarray= [re.sub("'", '', elem) for elem in tagarray]
+def main():
+    if not 'tags' in session:
+        session['tags'] = []
     if request.method == 'POST':
         print('if', file=sys.stderr)
         _query = request.form['query']
         if request.form['submit'] == 'Search':
-            tagarray.append(_query)
+            if not _query == '':
+                session['tags'].append(_query)
+                session.modified = True
 
             qlist = []
             #query = ast.literal_eval(tagarray)
-            query = tagarray
+            query = session['tags']
             print(query)
             for q in query:
                 if q != '':
@@ -114,9 +111,7 @@ def main(tags=None):
             #return render_template('result.html', recipes = recipes, mod = 4, form=form)
 
 
-            tagarray[:] = []
-            print(tagarray)
-            print('tagarray')
+            #session['tags'][:] = []
 
             try:
                 form = SearchForm()
@@ -128,15 +123,16 @@ def main(tags=None):
                                        form=form)
 
         if request.form['submit'] == 'Add':
-            tagarray.append(_query)
-            for tag in tagarray:
-                print(tag)
+            session['tags'].append(_query)
+            session.modified = True
+            #for tag in session['tags']:
+            #   print(tag)
             try:
                 try:
-                    return redirect(url_for('main', tags=tagarray, recipes = recipes, mod = 4))
+                    return redirect(url_for('main', recipes = recipes, mod = 4))
                 except Exception as e:
                     form = SearchForm()
-                    return redirect(url_for('main', tags=tagarray))
+                    return redirect(url_for('main'))
                     
                 
 
@@ -154,12 +150,12 @@ def main(tags=None):
         try:
             return render_template('result.html',
                                title='Search',
-                               form=form, tags=tagarray, recipes = recipes, mod = 4)
+                               form=form, recipes = recipes, mod = 4)
         except Exception as e:
                 form = SearchForm()
                 return render_template('result.html',
                                title='Search',
-                               form=form, tags=tagarray)
+                               form=form)
     return render_template('result.html')
 
 
@@ -327,5 +323,12 @@ def signOut():
     if 'userEmail' in session:
         session.pop('userEmail')
     return redirect(url_for('main'))
+
+@app.route('/deletetag', methods=['GET', 'POST'])
+def deletetag():
+    session['tags'].remove(str(request.json))
+    session.modified=True
+    return 'hi'
+
 
 app.secret_key = 'hooray'

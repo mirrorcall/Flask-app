@@ -80,11 +80,19 @@
                             itemText: 'label' // this will be used to set text of tag
                         });
 
-                        $("#tag").on('itemRemoved', function (event) {
-                            console.log('item removed : ' + event.item);
+                        $("#tags").on('beforeItemRemove', function (event) {
+                        	$.ajax({
+				url:"/deletetag",
+				type:"POST",
+				data:JSON.stringify(event.item.label),
+contentType: 'application/json;charset=UTF-8',
+    success: function(result) {
+        console.log(result);
+    }
+						});
                         });
                     </script>
-                    {%for tag in tags%}
+                    {%for tag in session['tags']%}
                     <script>
                         var tag = '{{ tag }}'
                         $('.div-tag').tagsinput('add', { id: 'tags', label: tag });

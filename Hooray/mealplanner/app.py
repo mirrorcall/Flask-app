@@ -1,5 +1,5 @@
 import re
-
+import ast
 from flask_sqlalchemy import SQLAlchemy
 #from mealplanner import models_food
 from flask import Flask, redirect, render_template, json, request, jsonify, url_for, session
@@ -10,6 +10,7 @@ from sqlalchemy import Table, Column, Integer, String, ForeignKey
 import pandas as pd
 import sys
 from fuzzywuzzy import fuzz
+
 
 
 app = Flask(__name__)
@@ -24,41 +25,11 @@ engine = sqlalchemy.create_engine(app.config['SQLALCHEMY_DATABASE_URI'], client_
 
 def getIDforIngredient(name):
     conn = engine.connect()
-    sql = "SELECT * FROM ingredient WHERE ingredient.i_name = %s" % (name)
+    sql = "SELECT i.* FROM ingredient i, UNNEST(alt_names) names WHERE (lower(i_name) = \'%s\') OR (lower(names) = \'%s\')" % (name, name)
+    print(sql)
     result = conn.execute(sql).fetchone()
-    return result['iid']
+    return result['iid'] if result['iid'] is not None else None
 
-'''
-if not con.dialect.has_table(con, 'recipe'):  # If table don't exist, Create.
-    recipe = Table('recipe', meta,
-			   Column('id', Integer, primary_key=True),
-			   Column('name', String), 
-    		   Column('description', String), 
-			   Column('steps', String)
-			   )
-
-    ingredients = Table('ingredients', meta,
-	    				Column('recipeid', Integer, ForeignKey('recipe.id')), 
-		    			Column('ingredient', String)
-			    		)
-
-    #create above tables
-    meta.create_all(con)
-'''
-toInsert = [
-    {'id': 1, 'name': 'chocolate cake', 'description': 'this is chocolate cake', 'steps': '1. mix ingredients 2.bake'}
-]
-# con.execute(meta.tables['recipe'].insert(), toInsert)
-
-toInsert = [
-    {'recipeid': 1, 'ingredient': 'flour'},
-    {'recipeid': 1, 'ingredient': 'cocoa'},
-    {'recipeid': 1, 'ingredient': '3 eggs'},
-    {'recipeid': 1, 'ingredient': 'butter'}
-]
-
-
-# con.execute(meta.tables['ingredients'].insert(), toInsert)
 
 
 
@@ -169,17 +140,16 @@ def autocomplete():
 
     return jsonify(matching_results=results)
 
-def init_array(query):
-    alist = query.split('-')[:]
+def init_array(alist):
     parray = 'ARRAY['
     i = 1
     for x in alist:
         if i == len(alist):
-            parray += x + ']'
+            parray += str(x) + ']'
         else:
-            parray += x + ','
+            parray += str(x) + ','
         i += 1
-
+    print(parray)
     return str(parray)
 
 
@@ -189,22 +159,20 @@ def init_array(query):
 """
 @app.route('/search_recipe/<query>', methods=['GET'])
 def search_recipe(query):
+    qlist = []
+    query = ast.literal_eval(query)
     print(query)
-    query = str.lower(str(query))
-    re.sub(r'[^a-zA-Z]', '', query)
-    query = re.search("'.*'", query, flags=0).group()
-    query = re.sub("'", '', query)
+    for q in query:
+        if q != '':
+            iid = getIDforIngredient(str(q).lower())
+            if iid is not None:
+                qlist.append(iid)
+
     conn = engine.connect()
-    print(query)
-    name = []
-    desc = []
-    img = []
-    
-    if re.search(r'\d', query):  # if query is digit check related ingredients id
-        sql = "SELECT * FROM recipe WHERE %s <@ i_ids" % init_array(query)  # add LIMIT to restrict to specific # of output
-    else:               # if query is alphabetic check recipes name
-        sql = "SELECT * FROM recipe WHERE lower(r_name) LIKE \'%%%s%%\' ORDER BY rid" \
-              % query  # add LIMIT to restrict to specific # of output
+
+    recipes = []
+
+    sql = "SELECT * FROM recipe WHERE %s <@ i_ids" % init_array(qlist)  # add LIMIT to restrict to specific # of output
     rs = conn.execute(sqlalchemy.text(sql))
     for row in rs:
         res = []
@@ -212,12 +180,16 @@ def search_recipe(query):
         res.append(row['r_name'])
         res.append(row['r_description'])
         res.append(row['r_url'])
-        img.extend([res])
-        print(img)
+        print(round(len(qlist)/len(row['i_ids']),2))
+        res.append(round(len(qlist)/len(row['i_ids']),2))
+        recipes.extend([res])
+        print(recipes)
 
 
-    print(sql)
-    return render_template('result.html', img = img)
+    #print(sql)
+    return render_template('result.html', img = recipes, mod = 4)
+
+
 
 '''
 @app.route('/autocomplete',methods=['GET'])

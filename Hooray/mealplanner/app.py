@@ -103,10 +103,10 @@ def main(tags=None):
                 res.append(row['r_name'])
                 res.append(row['r_description'])
                 res.append(row['r_url'])
-                print(round(len(qlist)/len(row['i_ids']),2))
+                #print(round(len(qlist)/len(row['i_ids']),2))
                 res.append(round(len(qlist)/len(row['i_ids']),2))
                 recipes.extend([res])
-                print(recipes)
+                #print(recipes)
 
 
             #print(sql)
@@ -114,8 +114,9 @@ def main(tags=None):
             #return render_template('result.html', recipes = recipes, mod = 4, form=form)
 
 
-
-
+            tagarray[:] = []
+            print(tagarray)
+            print('tagarray')
 
             try:
                 form = SearchForm()
@@ -139,7 +140,8 @@ def main(tags=None):
                 return render_template('index.html',
                                        title='Home',
                                        form=form)
-
+        recipes[:] = []
+        res[:] = []
     else:
         print('else', file=sys.stderr)
         form = SearchForm()

@@ -60,17 +60,18 @@
                 <h1>Search</h1>
                 <form action="" method="post" name="search">
                     {{ form.hidden_tag() }}
+                    
+                    Enter ingredients:<br>
+
+                    {{ form.query(size=50) }}
+                    {% for error in form.query.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                    <input type="submit" class="btn btn-secondary" name="submit" value="Add">&nbsp<input type="submit" class="btn btn-primary" name="submit" value="Search">
+                    
                     <p>
-                        Enter ingredients:<br>
-
-                        {{ form.query(size=80) }}
-                        {% for error in form.query.errors %}
-                        <span style="color: red;">[{{ error }}]</span>
-                        {% endfor %}<br>
+                        <input type="text" value="" id="tags" class="div-tag">
                     </p>
-
-                    <input type="text" value="" id="tags" class="div-tag">
-
                     <script>
 
                         $('.div-tag').tagsinput({
@@ -89,8 +90,8 @@
                         $('.div-tag').tagsinput('add', { id: 'tags', label: tag });
                     </script>
                     {% endfor %}
-                    <p><input type="submit" name="submit" value="Add"><input type="submit" name="submit" value="Search"></p>
-
+                    <p></p>
+                    
                 </form>
             </div>
         </div>

@@ -132,8 +132,13 @@ def main(tags=None):
             for tag in tagarray:
                 print(tag)
             try:
-                form = SearchForm()
-                return redirect(url_for('main', tags=tagarray))
+                try:
+                    return redirect(url_for('main', tags=tagarray, recipes = recipes, mod = 4))
+                except Exception as e:
+                    form = SearchForm()
+                    return redirect(url_for('main', tags=tagarray))
+                    
+                
 
             except Exception as e:
                 form = SearchForm()
@@ -146,7 +151,13 @@ def main(tags=None):
         print('else', file=sys.stderr)
         form = SearchForm()
         # if form.validate_on_submit():
-        return render_template('result.html',
+        try:
+            return render_template('result.html',
+                               title='Search',
+                               form=form, tags=tagarray, recipes = recipes, mod = 4)
+        except Exception as e:
+                form = SearchForm()
+                return render_template('result.html',
                                title='Search',
                                form=form, tags=tagarray)
     return render_template('result.html')

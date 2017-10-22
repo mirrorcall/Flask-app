@@ -170,6 +170,14 @@ def autocomplete():
 
     return jsonify(matching_results=results)
 
+
+def create_extension():
+    conn = engine.connect()
+
+    sql = 'CREATE EXTENSION IF NOT EXISTS intarray'
+    conn.execute(sql)
+
+
 def init_array(alist):
     parray = 'ARRAY['
     i = 1
@@ -187,7 +195,6 @@ def init_array(alist):
     :param      query    of str type (recipe title) or int type (ingredient id)
     :return        
 """
-
 @app.route('/search_recipe/<query>', methods=['GET'])
 def search_recipe(query):
     qlist = []
@@ -199,11 +206,13 @@ def search_recipe(query):
             if iid is not None:
                 qlist.append(iid)
 
+    create_extension()
+
     conn = engine.connect()
 
     recipes = []
 
-    sql = "SELECT * FROM recipe WHERE %s <@ i_ids" % init_array(qlist)  # add LIMIT to restrict to specific # of output
+    sql = "SELECT r_name, r_img, r_description, r_url, i_ids, (100.0*array_length(i_ids & %s,1))/array_length(i_ids,1) AS ct FROM recipe ORDER  BY 6 DESC NULLS LAST LIMIT 5 OFFSET 0" % init_array(qlist)  # add LIMIT to restrict to specific # of output
     rs = conn.execute(sqlalchemy.text(sql))
     for row in rs:
         res = []
